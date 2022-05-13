@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Around the U.S." />
+    <meta name="keywords" content="html, css" />
+    <meta name="author" content="Sabina Winehouse" />
+    <title>Around the U.S.</title>
+    <link rel="icon" href="./vendor/favicon.ico" />
+    <link rel="stylesheet" href="./pages/index.css" />
+  </head>
+  <body class="page">
+    <div class="page__content">
+      <header class="header">
+        <img src="./images/Logo.svg" class="header__logo" alt="logo" />
+      </header>
+      <main>
+        <section class="profile">
+          <img
+            src="./images/profile_pic.jpg"
+            alt="profile"
+            class="profile__picture"
+          />
+          <div class="profile__name-edit">
+            <h1 class="profile__name">Jacques Cousteau</h1>
+            <button
+              type="button"
+              class="profile__button-edit"
+              id="editButton"
+            ></button>
+          </div>
+          <p class="profile__subtitle">Explorer</p>
+
+          <button
+            type="button"
+            class="profile__button-add"
+            id="addButton"
+          ></button>
+        </section>
+
+        <section class="gallery">
+          <div class="gallery__element">
+            <img
+              src="./images/first.jpg"
+              alt="Yosemite Valley"
+              class="gallery__picture"
+            />
+            <div class="gallery__description">
+              <h2 class="gallery__title">Yosemite Valley</h2>
+              <button type="button" class="gallery__button-like"></button>
+            </div>
+          </div>
+
+          <div class="gallery__element">
+            <img
+              src="./images/second.jpg"
+              alt="Lake Louise"
+              class="gallery__picture"
+            />
+            <div class="gallery__description">
+              <h2 class="gallery__title">Lake Louise</h2>
+              <button type="button" class="gallery__button-like"></button>
+            </div>
+          </div>
+
+          <div class="gallery__element">
+            <img
+              src="./images/third.jpg"
+              alt="Bald Mountains"
+              class="gallery__picture"
+            />
+            <div class="gallery__description">
+              <h2 class="gallery__title">Bald Mountains</h2>
+              <button type="button" class="gallery__button-like"></button>
+            </div>
+          </div>
+          <div class="gallery__element">
+            <img
+              src="./images/fourth.jpg"
+              alt="Latemar"
+              class="gallery__picture"
+            />
+            <div class="gallery__description">
+              <h2 class="gallery__title">Latemar</h2>
+              <button type="button" class="gallery__button-like"></button>
+            </div>
+          </div>
+
+          <div class="gallery__element">
+            <img
+              src="./images/fifth.jpg"
+              alt="Vanoise Nationa..."
+              class="gallery__picture"
+            />
+            <div class="gallery__description">
+              <h2 class="gallery__title">Vanoise National Park</h2>
+              <button type="button" class="gallery__button-like"></button>
+            </div>
+          </div>
+          <div class="gallery__element">
+            <img
+              src="./images/sixth.jpg"
+              alt="Lago di Braies"
+              class="gallery__picture"
+            />
+            <div class="gallery__description">
+              <h2 class="gallery__title">Lago di Braies</h2>
+              <button type="button" class="gallery__button-like"></button>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer__text">© 2021 Around The U.S.</p>
+      </footer>
+    </div>
+    <script src="./scripts/script.js" defer></script>
+
+    <div class="edit edit_hidden">
+      <button
+        type="button"
+        class="edit__button-close"
+        id="closeButton"
+      ></button>
+      <fieldset class="edit__fieldset">
+        <h3 class="edit__profile">Edit profile</h3>
+        <form name="edit_profile" class="edit__form" id="editForm">
+          <input
+            class="edit__form-name"
+            name="edit_name"
+            type="text"
+            placeholder="Name"
+            ;
+          />
+
+          <input
+            class="edit__form-subtitle"
+            type="text"
+            placeholder="About me"
+          />
+
+          <button class="edit__button" type="button" type="submit">Save</button>
+        </form>
+      </fieldset>
+    </div>
+  </body>
+</html>

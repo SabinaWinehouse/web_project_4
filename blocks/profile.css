@@ -1,0 +1,108 @@
+.profile {
+  margin: 36px 0 46px 0;
+  display: grid;
+  grid-template-areas:
+    "picture name btn-edit btn-add"
+    " picture about about btn-add  ";
+}
+
+.profile__picture {
+  grid-area: picture;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+}
+.profile__name-edit {
+  display: flex;
+}
+.profile__name {
+  grid-area: name;
+  align-self: center;
+  font-size: 3em;
+  font-weight: 500;
+  line-height: 48px;
+  margin: 0;
+}
+.profile__subtitle {
+  grid-area: about;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+}
+.profile__button-edit {
+  margin: 0 0 0 18px;
+  grid-area: btn-edit;
+  align-self: center;
+  border: 1px solid #ffffff;
+  background: url("../images/edit__button.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 24px;
+  height: 24px;
+  background-color: black;
+}
+
+.profile__button-add {
+  grid-area: btn-add;
+  justify-self: end;
+  border-radius: 2px;
+  border: 2px solid #ffffff;
+  align-self: center;
+  background: url("../images/add_button.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: black;
+  width: 150px;
+  height: 50px;
+  font-size: 22px;
+}
+.profile__button-edit:hover {
+  opacity: 60%;
+}
+.profile__button-add:hover {
+  opacity: 60%;
+}
+
+@media screen and (max-width: 750px) {
+  .profile {
+    grid-template-columns: auto 220px auto auto;
+  }
+  .profile__button-edit {
+    margin: 0 0 10px 0;
+    align-self: end;
+  }
+  .profile__name {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: 553px) {
+  .profile {
+    margin: 38px 0 0 0;
+    text-align: center;
+    display: block;
+  }
+  .profile__picture {
+    margin: 0 0 26px 0;
+  }
+  .profile__name {
+    margin: 0 0 14px 0;
+  }
+  .profile__subtitle {
+    margin: 0 0 36px 0;
+  }
+  .profile__button-add {
+    width: 282px;
+    margin: 0 0 36px 0;
+    padding: 0;
+  }
+  .profile__button-edit {
+    margin: 0 0 10px 10px;
+    align-self: center;
+  }
+}
+@media screen and (max-width: 385px) {
+  .profile__name {
+    font-size: 22px;
+  }
+}

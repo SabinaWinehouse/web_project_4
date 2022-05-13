@@ -1,0 +1,97 @@
+.edit_hidden {
+  display: none;
+}
+
+.edit__button-close {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: url("../images/close_button.svg");
+  background-repeat: no-repeat;
+  top: -18%;
+  right: -10%;
+}
+.edit__button-close:hover {
+  opacity: 60%;
+}
+.edit {
+  position: absolute;
+  top: 30%;
+  right: 40%;
+  border-radius: 10px;
+  max-width: 430px;
+  max-height: 330px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  display: flex;
+  flex-direction: row;
+}
+
+.edit__fieldset {
+  margin: 36px;
+  width: 100%;
+  padding: 0;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.edit__profile {
+  margin: 0 0 54px 0;
+}
+.edit__form {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 17px;
+  display: flex;
+  flex-direction: column;
+}
+.edit__form-name {
+  margin: 0 0 43px 0;
+  padding: 0 0 13px 0;
+  border: none;
+  border-bottom: 1px solid rgb(200, 200, 200);
+}
+.edit__form-subtitle {
+  margin: 0 0 30px 0;
+  padding: 0 0 13px 0;
+  border: none;
+  border-bottom: 1px solid rgb(200, 200, 200);
+}
+.edit__button {
+  padding: 0 124px;
+  border-radius: 2px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
+  height: 50px;
+  margin: 18px 0 0 0;
+  border: none;
+  background-color: black;
+  color: white;
+}
+.edit__button:hover {
+  opacity: 80%;
+}
+
+@media screen and (max-width: 474px) {
+  .edit {
+    margin-top: -130px;
+    margin-left: -140px;
+    width: 282px;
+    height: 322px;
+  }
+  .edit__button-close {
+    top: 54%;
+    right: 10%;
+  }
+  .edit__fieldset {
+    margin: 8px;
+  }
+  .edit__button {
+    justify-content: center;
+    width: 238px;
+    height: 46px;
+  }
+}
