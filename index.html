@@ -25,11 +25,7 @@
           />
           <div class="profile__name-edit">
             <h1 class="profile__name">Jacques Cousteau</h1>
-            <button
-              type="button"
-              class="profile__button-edit"
-              id="editButton"
-            ></button>
+            <button type="button" class="profile__button-edit"></button>
           </div>
           <p class="profile__subtitle">Explorer</p>
 
@@ -121,19 +117,16 @@
     <script src="./scripts/script.js" defer></script>
 
     <div class="edit edit_hidden">
-      <button
-        type="button"
-        class="edit__button-close"
-        id="closeButton"
-      ></button>
+      <button type="button" class="edit__button-close"></button>
       <fieldset class="edit__fieldset">
         <h3 class="edit__profile">Edit profile</h3>
-        <form name="edit_profile" class="edit__form" id="editForm">
+        <form name="edit_profile" class="edit__form">
           <input
             class="edit__form-name"
             name="edit_name"
             type="text"
             placeholder="Name"
+            required
           />
 
           <input
@@ -141,6 +134,7 @@
             name="edit_subtitle"
             type="text"
             placeholder="About me"
+            required
           />
 
           <button class="edit__button" name="edit_popup_button" type="submit">

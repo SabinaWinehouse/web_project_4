@@ -23,6 +23,7 @@
     margin: 0 auto 50px;
   }
   .gallery__list {
+    margin: 0;
     grid-template-columns: 282px;
   }
 }

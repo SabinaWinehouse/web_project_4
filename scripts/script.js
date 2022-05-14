@@ -1,29 +1,38 @@
-const editContainer = document.getElementById("editForm");
-document.getElementById("editButton").addEventListener("click", function () {
-  document.querySelector(".edit_hidden").classList.add("edit");
-});
-document.getElementById("closeButton").addEventListener("click", function () {
-  document.querySelector(".edit_hidden").classList.remove("edit");
-});
+const nameInput = document.querySelector(".edit__form-name");
+const jobInput = document.querySelector(".edit__form-subtitle");
 
-let formElement = document.querySelector(".edit__form");
-console.log(formElement);
+const nameField = document.querySelector(".profile__name");
+const jobField = document.querySelector(".profile__subtitle");
+
+const buttonEditAdd = document.querySelector(".profile__button-edit");
+
+function buttonEditOpen() {
+  document.querySelector(".edit_hidden").classList.add("edit");
+}
+
+buttonEditAdd.addEventListener("click", buttonEditOpen);
+
+const buttonEditRemove = document.querySelector(".edit__button-close");
+
+function buttonEditClose() {
+  document.querySelector(".edit_hidden").classList.remove("edit");
+}
+
+buttonEditRemove.addEventListener("click", buttonEditClose);
+
+const formElement = document.querySelector(".edit__form");
 
 function handleProfileFormSubmit(evt) {
   evt.preventDefault();
 
-  let nameInput = document.querySelector(".edit__form-name");
-  let jobInput = document.querySelector(".edit__form-subtitle");
+  nameField.textContent = nameInput.value;
+  jobField.textContent = jobInput.value;
+}
+const saveButton = document.querySelector(".edit__button");
 
-  let nameInputValue = nameInput.value;
-  let jobInputValue = jobInput.value;
-
-  let nameField = document.querySelector(".profile__name");
-  let jobField = document.querySelector(".profile__subtitle");
-
-  document.querySelector(".profile__name").textContent = nameInputValue;
-  document.querySelector(".profile__subtitle").textContent = jobInputValue;
-  console.log(nameField.textContent);
+function saveButtonCLose() {
+  document.querySelector(".edit_hidden").classList.remove("edit");
 }
 
-formElement.addEventListener("click", handleProfileFormSubmit);
+formElement.addEventListener("submit", handleProfileFormSubmit);
+saveButton.addEventListener("click", saveButtonCLose);
