@@ -1,6 +1,6 @@
 .header {
   margin: 45px 0 41px 0;
-  border-bottom: 1px solid rgb(92, 91, 91);
+  border-bottom: 1px solid rgba(92, 91, 91, 0.7);
 }
 .header__logo {
   margin: 0 0 41px 0;

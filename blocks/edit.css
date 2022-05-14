@@ -1,6 +1,18 @@
 .edit_hidden {
   display: none;
 }
+.edit {
+  position: fixed;
+  top: 30%;
+  right: 40%;
+  border-radius: 10px;
+  max-width: 430px;
+  max-height: 330px;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  display: flex;
+  flex-direction: row;
+}
 
 .edit__button-close {
   position: absolute;
@@ -14,18 +26,6 @@
 }
 .edit__button-close:hover {
   opacity: 60%;
-}
-.edit {
-  position: absolute;
-  top: 30%;
-  right: 40%;
-  border-radius: 10px;
-  max-width: 430px;
-  max-height: 330px;
-  background-color: rgb(255, 255, 255);
-  color: black;
-  display: flex;
-  flex-direction: row;
 }
 
 .edit__fieldset {

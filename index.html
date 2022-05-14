@@ -41,75 +41,77 @@
         </section>
 
         <section class="gallery">
-          <div class="gallery__element">
-            <img
-              src="./images/first.jpg"
-              alt="Yosemite Valley"
-              class="gallery__picture"
-            />
-            <div class="gallery__description">
-              <h2 class="gallery__title">Yosemite Valley</h2>
-              <button type="button" class="gallery__button-like"></button>
-            </div>
-          </div>
+          <ul class="gallery__list">
+            <li class="card">
+              <img
+                src="./images/first.jpg"
+                alt="Yosemite Valley"
+                class="card__picture"
+              />
+              <div class="card__description">
+                <h2 class="card__title">Yosemite Valley</h2>
+                <button type="button" class="card__button"></button>
+              </div>
+            </li>
 
-          <div class="gallery__element">
-            <img
-              src="./images/second.jpg"
-              alt="Lake Louise"
-              class="gallery__picture"
-            />
-            <div class="gallery__description">
-              <h2 class="gallery__title">Lake Louise</h2>
-              <button type="button" class="gallery__button-like"></button>
-            </div>
-          </div>
+            <li class="card">
+              <img
+                src="./images/second.jpg"
+                alt="Lake Louise"
+                class="card__picture"
+              />
+              <div class="card__description">
+                <h2 class="card__title">Lake Louise</h2>
+                <button type="button" class="card__button"></button>
+              </div>
+            </li>
 
-          <div class="gallery__element">
-            <img
-              src="./images/third.jpg"
-              alt="Bald Mountains"
-              class="gallery__picture"
-            />
-            <div class="gallery__description">
-              <h2 class="gallery__title">Bald Mountains</h2>
-              <button type="button" class="gallery__button-like"></button>
-            </div>
-          </div>
-          <div class="gallery__element">
-            <img
-              src="./images/fourth.jpg"
-              alt="Latemar"
-              class="gallery__picture"
-            />
-            <div class="gallery__description">
-              <h2 class="gallery__title">Latemar</h2>
-              <button type="button" class="gallery__button-like"></button>
-            </div>
-          </div>
+            <li class="card">
+              <img
+                src="./images/third.jpg"
+                alt="Bald Mountains"
+                class="card__picture"
+              />
+              <div class="card__description">
+                <h2 class="card__title">Bald Mountains</h2>
+                <button type="button" class="card__button"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/fourth.jpg"
+                alt="Latemar"
+                class="card__picture"
+              />
+              <div class="card__description">
+                <h2 class="card__title">Latemar</h2>
+                <button type="button" class="card__button"></button>
+              </div>
+            </li>
 
-          <div class="gallery__element">
-            <img
-              src="./images/fifth.jpg"
-              alt="Vanoise Nationa..."
-              class="gallery__picture"
-            />
-            <div class="gallery__description">
-              <h2 class="gallery__title">Vanoise National Park</h2>
-              <button type="button" class="gallery__button-like"></button>
-            </div>
-          </div>
-          <div class="gallery__element">
-            <img
-              src="./images/sixth.jpg"
-              alt="Lago di Braies"
-              class="gallery__picture"
-            />
-            <div class="gallery__description">
-              <h2 class="gallery__title">Lago di Braies</h2>
-              <button type="button" class="gallery__button-like"></button>
-            </div>
-          </div>
+            <li class="card">
+              <img
+                src="./images/fifth.jpg"
+                alt="Vanoise Nationa..."
+                class="card__picture"
+              />
+              <div class="card__description">
+                <h2 class="card__title">Vanoise National Park</h2>
+                <button type="button" class="card__button"></button>
+              </div>
+            </li>
+            <li class="card">
+              <img
+                src="./images/sixth.jpg"
+                alt="Lago di Braies"
+                class="card__picture"
+              />
+              <div class="card__description">
+                <h2 class="card__title">Lago di Braies</h2>
+                <button type="button" class="card__button"></button>
+              </div>
+            </li>
+          </ul>
         </section>
       </main>
       <footer class="footer">
@@ -132,16 +134,18 @@
             name="edit_name"
             type="text"
             placeholder="Name"
-            ;
           />
 
           <input
             class="edit__form-subtitle"
+            name="edit_subtitle"
             type="text"
             placeholder="About me"
           />
 
-          <button class="edit__button" type="button" type="submit">Save</button>
+          <button class="edit__button" name="edit_popup_button" type="submit">
+            Save
+          </button>
         </form>
       </fieldset>
     </div>
