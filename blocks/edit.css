@@ -8,6 +8,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
+}
+.edit_open {
+  visibility: visible;
 }
 .edit__container {
   position: relative;

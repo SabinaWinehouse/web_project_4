@@ -1,38 +1,29 @@
-const nameInput = document.querySelector(".edit__form-name");
-const jobInput = document.querySelector(".edit__form-subtitle");
-
+const edit = document.querySelector(".edit");
 const nameField = document.querySelector(".profile__name");
 const jobField = document.querySelector(".profile__subtitle");
-
 const buttonEditAdd = document.querySelector(".profile__button-edit");
-
-function buttonEditOpen() {
-  document.querySelector(".edit_hidden").classList.add("edit");
-}
-
-buttonEditAdd.addEventListener("click", buttonEditOpen);
-
-const buttonEditRemove = document.querySelector(".edit__button-close");
-
-function buttonEditClose() {
-  document.querySelector(".edit_hidden").classList.remove("edit");
-}
-
-buttonEditRemove.addEventListener("click", buttonEditClose);
-
+const buttonEditClose = document.querySelector(".edit__button-close");
+const nameInput = document.querySelector(".edit__form-name");
+const jobInput = document.querySelector(".edit__form-subtitle");
 const formElement = document.querySelector(".edit__form");
 
-function handleProfileFormSubmit(evt) {
-  evt.preventDefault();
+function OpenEditSection() {
+  edit.classList.add("edit_open");
+  nameInput.value = nameField.textContent;
+  jobInput.value = jobField.textContent;
+}
 
+function CloseEditSection() {
+  edit.classList.remove("edit_open");
+}
+
+function handleProfileFormSubmit(event) {
+  event.preventDefault();
   nameField.textContent = nameInput.value;
   jobField.textContent = jobInput.value;
-}
-const saveButton = document.querySelector(".edit__button");
-
-function saveButtonCLose() {
-  document.querySelector(".edit_hidden").classList.remove("edit");
+  CloseEditSection();
 }
 
+buttonEditAdd.addEventListener("click", OpenEditSection);
+buttonEditClose.addEventListener("click", CloseEditSection);
 formElement.addEventListener("submit", handleProfileFormSubmit);
-saveButton.addEventListener("click", saveButtonCLose);
