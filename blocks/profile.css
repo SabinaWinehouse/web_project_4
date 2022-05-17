@@ -1,10 +1,10 @@
 .profile {
-  margin: 36px 0 46px 0;
+  margin: 36px 0 50px 0;
   display: grid;
   grid-template-areas:
-    "picture name  btn-add"
-    " picture about about";
-  grid-template-columns: 172.5px auto 150px;
+    "picture name btn-add"
+    " picture about btn-add";
+  grid-template-columns: 150px auto 150px;
 }
 
 .profile__picture {
@@ -15,6 +15,7 @@
 }
 .profile__name-edit {
   display: flex;
+  align-self: end;
 }
 .profile__name {
   grid-area: name;
@@ -22,14 +23,14 @@
   font-size: 3.281vw;
   font-weight: 500;
   line-height: 48px;
-  margin: 0;
+  margin: 0 0 16px 0;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
   max-width: 373px;
 }
 .profile__button-edit {
-  margin: 0 0 0 18px;
+  margin: 0 0 16px 18px;
 
   padding: 0;
   grid-area: btn-edit;
@@ -95,20 +96,18 @@
     display: block;
   }
   .profile__picture {
-    margin: 0 0 18px 0;
+    margin: 0 0 26.25px 0;
   }
   .profile__name-edit {
     justify-content: center;
   }
   .profile__name {
-    margin: 0 0 3px 0;
+    margin: 0 0 14px 0;
   }
   .profile__subtitle {
-    margin: 0 0 25px 0;
-    font-family: Inter;
+    margin: 0 auto 25px auto;
     font-size: 14px;
-
-    line-height: 17px;
+    line-height: 16.94px;
   }
   .profile__button-add {
     width: 282px;
@@ -117,7 +116,7 @@
   }
   .profile__button-edit {
     border: 1px solid #ffffff;
-    margin: 0 0 0 10px;
+    margin: 0 0 14px 10px;
     align-self: center;
     width: 18px;
     height: 18px;
@@ -126,5 +125,6 @@
 @media screen and (max-width: 385px) {
   .profile__name {
     font-size: 22px;
+    line-height: 27px;
   }
 }

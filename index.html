@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
   <body class="page">
+    <header class="header">
+      <img src="./images/Logo.svg" class="header__logo" alt="logo" />
+    </header>
     <div class="page__content">
-      <header class="header">
-        <img src="./images/Logo.svg" class="header__logo" alt="logo" />
-      </header>
       <main>
         <section class="profile">
           <img
@@ -115,33 +115,35 @@
       </footer>
     </div>
     <script src="./scripts/script.js" defer></script>
+    <div class="edit">
+      <div class="edit__container">
+        <button type="button" class="edit__button-close"></button>
 
-    <div class="edit edit_hidden">
-      <button type="button" class="edit__button-close"></button>
-      <fieldset class="edit__fieldset">
-        <h3 class="edit__profile">Edit profile</h3>
-        <form name="edit_profile" class="edit__form">
-          <input
-            class="edit__form-name"
-            name="edit_name"
-            type="text"
-            placeholder="Name"
-            required
-          />
+        <fieldset class="edit__fieldset">
+          <h3 class="edit__profile">Edit profile</h3>
+          <form name="edit_profile" class="edit__form">
+            <input
+              class="edit__form-name"
+              name="edit_name"
+              type="text"
+              placeholder="Name"
+              required
+            />
 
-          <input
-            class="edit__form-subtitle"
-            name="edit_subtitle"
-            type="text"
-            placeholder="About me"
-            required
-          />
+            <input
+              class="edit__form-subtitle"
+              name="edit_subtitle"
+              type="text"
+              placeholder="About me"
+              required
+            />
 
-          <button class="edit__button" name="edit_popup_button" type="submit">
-            Save
-          </button>
-        </form>
-      </fieldset>
+            <button class="edit__button" name="edit_popup_button" type="submit">
+              Save
+            </button>
+          </form>
+        </fieldset>
+      </div>
     </div>
   </body>
 </html>
