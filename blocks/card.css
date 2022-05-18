@@ -2,13 +2,14 @@
   background-color: white;
   border-radius: 10px 10px;
   width: 282px;
-  height: 361px;
+  max-height: 361px;
   color: black;
 }
 .card__picture {
   border-radius: 10px 10px 0 0;
   width: 282px;
   height: 282px;
+  display: block;
 }
 .card__description {
   margin: 24px 15px 31px 21px;

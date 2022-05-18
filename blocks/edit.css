@@ -17,7 +17,7 @@
   position: relative;
   border-radius: 10px;
   width: 430px;
-  height: 330px;
+  max-height: 330px;
   background-size: cover;
   background-color: rgb(255, 255, 255);
   color: black;
@@ -42,7 +42,6 @@
 
 .edit__fieldset {
   margin: 34px 36px 36.5px 36px;
-
   width: 358px;
   padding: 0;
   border: none;
@@ -96,15 +95,15 @@
   .edit {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: baseline;
   }
   .edit__container {
     width: 282px;
-    height: 322px;
-    margin: -145px 0 0 0;
+    max-height: 322px;
+    margin: 123px 0 0 0;
   }
   .edit__button-close {
-    background: url("../images/close_button_320.svg");
+    background-size: contain;
     background-repeat: no-repeat;
     top: -40px;
     right: 1px;
@@ -130,7 +129,6 @@
   .edit__button {
     justify-content: center;
     height: 46px;
-    font-family: Inter;
     font-size: 14px;
     line-height: 17px;
   }
