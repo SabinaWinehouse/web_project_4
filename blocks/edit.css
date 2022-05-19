@@ -17,7 +17,7 @@
   position: relative;
   border-radius: 10px;
   width: 430px;
-  max-height: 330px;
+
   background-size: cover;
   background-color: rgb(255, 255, 255);
   color: black;
@@ -53,7 +53,6 @@
   font-size: 24px;
   line-height: 29px;
   margin: 0 0 54px 0;
-  max-height: 23px;
   max-width: 330px;
 }
 .edit__form {
@@ -92,15 +91,8 @@
 }
 
 @media screen and (max-width: 474px) {
-  .edit {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-  }
   .edit__container {
     width: 282px;
-    max-height: 322px;
-    margin: 123px 0 0 0;
   }
   .edit__button-close {
     background-size: contain;
@@ -127,7 +119,6 @@
     padding: 0 0 9px 0;
   }
   .edit__button {
-    justify-content: center;
     height: 46px;
     font-size: 14px;
     line-height: 17px;
