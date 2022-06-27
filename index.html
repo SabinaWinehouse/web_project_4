@@ -11,6 +11,7 @@
     <link rel="icon" href="./vendor/favicon.ico" />
     <link rel="stylesheet" href="./pages/index.css" />
   </head>
+
   <body class="page">
     <header class="header">
       <img src="./images/Logo.svg" class="header__logo" alt="logo" />
@@ -37,84 +38,14 @@
         </section>
 
         <section class="gallery">
-          <ul class="gallery__list">
-            <li class="card">
-              <img
-                src="./images/first.jpg"
-                alt="Yosemite Valley"
-                class="card__picture"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Yosemite Valley</h2>
-                <button type="button" class="card__button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img
-                src="./images/second.jpg"
-                alt="Lake Louise"
-                class="card__picture"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Lake Louise</h2>
-                <button type="button" class="card__button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img
-                src="./images/third.jpg"
-                alt="Bald Mountains"
-                class="card__picture"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Bald Mountains</h2>
-                <button type="button" class="card__button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/fourth.jpg"
-                alt="Latemar"
-                class="card__picture"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Latemar</h2>
-                <button type="button" class="card__button"></button>
-              </div>
-            </li>
-
-            <li class="card">
-              <img
-                src="./images/fifth.jpg"
-                alt="Vanoise Nationa..."
-                class="card__picture"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Vanoise National Park</h2>
-                <button type="button" class="card__button"></button>
-              </div>
-            </li>
-            <li class="card">
-              <img
-                src="./images/sixth.jpg"
-                alt="Lago di Braies"
-                class="card__picture"
-              />
-              <div class="card__description">
-                <h2 class="card__title">Lago di Braies</h2>
-                <button type="button" class="card__button"></button>
-              </div>
-            </li>
-          </ul>
+          <ul class="gallery__list"></ul>
         </section>
       </main>
       <footer class="footer">
         <p class="footer__text">© 2021 Around The U.S.</p>
       </footer>
     </div>
-    <script src="./scripts/script.js" defer></script>
+
     <div class="edit">
       <div class="edit__container">
         <button type="button" class="edit__button-close"></button>
@@ -145,5 +76,58 @@
         </fieldset>
       </div>
     </div>
+
+    <div class="add">
+      <div class="add__container">
+        <button type="button" class="add__button-close"></button>
+
+        <fieldset class="add__fieldset">
+          <h3 class="add__place">New place</h3>
+          <form name="add_place" class="add__form">
+            <input
+              class="add__form-title"
+              name="add_title"
+              type="text"
+              placeholder="Title"
+              required
+            />
+
+            <input
+              class="add__form-link"
+              name="add_link"
+              type="text"
+              placeholder="Image link"
+              required
+            />
+
+            <button class="add__button" name="add_popup_button" type="submit">
+              Create
+            </button>
+          </form>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="popup">
+      <div class="popup__content">
+        <button type="button" class="popup__button-close"></button>
+        <figure>
+          <img class="popup__image" src="#" alt="#" />
+          <figcaption class="popup__caption"></figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <script src="./scripts/script.js" defer></script>
+    <template id="card-template">
+      <li class="card">
+        <button type="button" class="card__delete-button"></button>
+        <img src="#" alt="#" class="card__picture" />
+        <div class="card__description">
+          <h2 class="card__title"></h2>
+          <button type="button" class="card__like-button"></button>
+        </div>
+      </li>
+    </template>
   </body>
 </html>

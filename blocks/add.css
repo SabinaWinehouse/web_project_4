@@ -1,4 +1,4 @@
-.edit {
+.add {
   position: fixed;
   top: 0;
   left: 0;
@@ -10,10 +10,10 @@
   align-items: center;
   visibility: hidden;
 }
-.edit_open {
+.add_open {
   visibility: visible;
 }
-.edit__container {
+.add__container {
   position: relative;
   border-radius: 10px;
   width: 430px;
@@ -24,8 +24,7 @@
   flex-direction: row;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
 }
-
-.edit__button-close {
+.add__button-close {
   position: absolute;
   width: 40px;
   height: 40px;
@@ -35,11 +34,10 @@
   top: -10%;
   right: -10%;
 }
-.edit__button-close:hover {
+.add__button-close:hover {
   opacity: 60%;
 }
-
-.edit__fieldset {
+.add__fieldset {
   margin: 34px 36px 36.5px 36px;
   width: 358px;
   padding: 0;
@@ -48,34 +46,34 @@
   flex-direction: column;
   justify-content: space-around;
 }
-.edit__profile {
+.add__place {
   font-size: 24px;
   line-height: 29px;
   margin: 0 0 54px 0;
   max-width: 330px;
 }
-.edit__form {
+.add__form {
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
   display: flex;
   flex-direction: column;
 }
-.edit__form-name {
+.add__form-title {
   max-width: 100%;
   margin: 0 0 30px 0;
   padding: 0 0 13px 0;
   border: none;
   border-bottom: 1px solid rgb(200, 200, 200);
 }
-.edit__form-subtitle {
+.add__form-link {
   max-width: 100%;
   margin: 0 0 48px 0;
   padding: 0 0 13px 0;
   border: none;
   border-bottom: 1px solid rgb(200, 200, 200);
 }
-.edit__button {
+.add__button {
   border-radius: 2px;
   font-size: 18px;
   font-weight: 400;
@@ -85,15 +83,15 @@
   background-color: black;
   color: white;
 }
-.edit__button:hover {
+.add__button:hover {
   opacity: 80%;
 }
 
 @media screen and (max-width: 474px) {
-  .edit__container {
+  .add__container {
     width: 282px;
   }
-  .edit__button-close {
+  .add__button-close {
     background-size: contain;
     background-repeat: no-repeat;
     top: -40px;
@@ -101,23 +99,23 @@
     width: 26px;
     height: 26px;
   }
-  .edit__fieldset {
+  .add__fieldset {
     width: 238px;
     margin: 25px 22px 25px 22px;
   }
-  .edit__profile {
+  .add__place {
     font-size: 18px;
     line-height: 22px;
   }
-  .edit__form-name {
+  .add__form-title {
     margin: 0 0 30px 0;
     padding: 0 0 9px 0;
   }
-  .edit__form-subtitle {
+  .add__form-link {
     margin: 0 0 46px 0;
     padding: 0 0 9px 0;
   }
-  .edit__button {
+  .add__button {
     height: 46px;
     font-size: 14px;
     line-height: 17px;
