@@ -9,9 +9,13 @@
   justify-content: center;
   align-items: center;
   visibility: hidden;
+  transition: opacity 1s ease-out;
+  opacity: 0;
+  overflow: hidden;
 }
 .add_open {
   visibility: visible;
+  opacity: 1;
 }
 .add__container {
   position: relative;

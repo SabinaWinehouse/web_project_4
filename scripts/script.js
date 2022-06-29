@@ -24,6 +24,7 @@ const initialCards = [
     link: "https://code.s3.yandex.net/web-code/lago.jpg",
   },
 ];
+
 const edit = document.querySelector(".edit");
 const nameField = document.querySelector(".profile__name");
 const jobField = document.querySelector(".profile__subtitle");
@@ -36,22 +37,16 @@ const galleryList = document.querySelector(".gallery__list");
 const addCardForm = document.querySelector(".add__form");
 const placeInputName = document.querySelector(".add__form-title");
 const placeInputLink = document.querySelector(".add__form-link");
-const addImageModal = document.querySelector(".popup");
-const imageCloseButton = document.querySelector(".popup__button-close");
-const imagePopup = document.querySelector(".popup__image");
-const imageCaption = document.querySelector(".popup__caption");
-
-console.log(placeInputName);
-console.log(placeInputLink);
-
-function renderCard(card, container) {
-  container.prepend(card);
-}
-
+const add = document.querySelector(".add");
+const buttonAddOpen = document.querySelector(".profile__button-add");
+const buttonAddClose = document.querySelector(".add__button-close");
 initialCards.forEach((card) => {
   const cardElement = createCard(card);
   renderCard(cardElement, galleryList);
 });
+function renderCard(card, container) {
+  container.prepend(card);
+}
 
 function createCard(data) {
   const cardTemplate = document.querySelector("#card-template").content;
@@ -73,13 +68,23 @@ function createCard(data) {
     cardElement.remove();
   });
 
-  cardImage.addEventListener("click", () => {
-    cardImage.classList.toggle("popup");
-    cardImage.src = data.link;
-    cardImage.textContent = data.name;
-  });
-
   return cardElement;
+}
+
+function callImagePopUp() {
+  const imagePopup = document.querySelector(".popup__image");
+  const cardImages = document.querySelectorAll(".card__picture");
+  let URL;
+
+  cardImages.forEach((image) => {
+    image.addEventListener("click", (e) => {
+      URL = e.target.src;
+      imagePopup.src = URL;
+
+      console.log(imagePopup.src);
+      imagePopup.classList.toggle("popup");
+    });
+  });
 }
 
 function handleProfileFormSubmit(event) {
@@ -88,10 +93,6 @@ function handleProfileFormSubmit(event) {
   jobField.textContent = jobInput.value;
   CloseEditSection();
 }
-
-const add = document.querySelector(".add");
-const buttonAddOpen = document.querySelector(".profile__button-add");
-const buttonAddClose = document.querySelector(".add__button-close");
 
 function closeAddSection() {
   add.classList.remove("add_open");
@@ -127,7 +128,7 @@ function handleAddCardForm() {
   const cardElement = createCard(card);
   renderCard(cardElement, galleryList);
 }
-
+///////eventListeners////
 buttonEditAdd.addEventListener("click", () => {
   openPopup(edit);
 });
@@ -141,3 +142,5 @@ addCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
   handleAddCardForm();
 });
+
+callImagePopUp();

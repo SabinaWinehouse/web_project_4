@@ -9,9 +9,13 @@
   justify-content: center;
   align-items: center;
   visibility: hidden;
+  overflow: hidden;
+  transition: opacity 1s ease-out;
+  opacity: 0;
 }
 .edit_open {
   visibility: visible;
+  opacity: 1;
 }
 .edit__container {
   position: relative;
