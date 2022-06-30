@@ -82,7 +82,7 @@ function callImagePopUp() {
       imagePopup.src = URL;
 
       console.log(imagePopup.src);
-      imagePopup.classList.toggle("popup__open");
+      imagePopup.classList.toggle("popup_open");
     });
   });
 }
