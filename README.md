@@ -17,4 +17,4 @@ JavaScript
 
 - [Link to the project](https://sabinawinehouse.github.io/web_project_4/)
 
-- [Link to the project in GitHub] (https://github.com/SabinaWinehouse/web_project_4)
+- [Link to the project in GitHub](https://github.com/SabinaWinehouse/web_project_4)
