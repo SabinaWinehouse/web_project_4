@@ -56,10 +56,13 @@ function createCard(data) {
   const likeButton = cardElement.querySelector(".card__like-button");
   const cardImage = cardElement.querySelector(".card__picture");
   const deleteButton = cardElement.querySelector(".card__delete-button");
+  const popup = document.querySelector(".popup");
+  const popupCaption = popup.querySelector(".popup__caption");
 
   cardImage.src = data.link;
   cardImage.alt = `A beautiful scene in ${data.name}`;
   cardTitleElement.textContent = data.name;
+  popupCaption.textContent = data.name;
 
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
@@ -73,22 +76,29 @@ function createCard(data) {
 }
 
 function callImagePopUp() {
+  const popup = document.querySelector(".popup");
   const imagePopup = document.querySelector(".popup__image");
   const cardImages = document.querySelectorAll(".card__picture");
+  const popupCloseButton = document.querySelector(".popup__button-close");
+
   let URL;
-  let Caption;
+  let caption;
 
   cardImages.forEach((image) => {
     image.addEventListener("click", (e) => {
       URL = e.target.src;
       imagePopup.src = URL;
 
-      Caption = e.target.alt;
-      imagePopup.alt = Caption;
+      caption = e.target.alt;
+      imagePopup.alt = URL;
 
       console.log(imagePopup.alt);
       console.log(imagePopup.src);
-      imagePopup.classList.toggle("popup_open");
+      popup.classList.toggle("popup_open");
+    });
+
+    popupCloseButton.addEventListener("click", () => {
+      popup.classList.remove("popup_open");
     });
   });
 }
