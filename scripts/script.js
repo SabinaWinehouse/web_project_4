@@ -40,6 +40,7 @@ const placeInputLink = document.querySelector(".add__form-link");
 const add = document.querySelector(".add");
 const buttonAddOpen = document.querySelector(".profile__button-add");
 const buttonAddClose = document.querySelector(".add__button-close");
+
 initialCards.forEach((card) => {
   const cardElement = createCard(card);
   renderCard(cardElement, galleryList);
@@ -75,12 +76,17 @@ function callImagePopUp() {
   const imagePopup = document.querySelector(".popup__image");
   const cardImages = document.querySelectorAll(".card__picture");
   let URL;
+  let Caption;
 
   cardImages.forEach((image) => {
     image.addEventListener("click", (e) => {
       URL = e.target.src;
       imagePopup.src = URL;
 
+      Caption = e.target.alt;
+      imagePopup.alt = Caption;
+
+      console.log(imagePopup.alt);
       console.log(imagePopup.src);
       imagePopup.classList.toggle("popup_open");
     });
@@ -144,3 +150,25 @@ addCardForm.addEventListener("submit", (event) => {
 });
 
 callImagePopUp();
+
+// const popup = document.querySelector(".popup");
+// const imagePopup = document.querySelector(".popup__image");
+// const cardImages = document.querySelectorAll(".card__picture");
+// const popupButtonClose = document.querySelectorAll(".popup__button-close");
+// const popupCaption = document.querySelector(".popup__caption");
+
+// function openPopupImage() {
+//   popup.classList.add("popup_open");
+// }
+
+// cardImages.addEventListener("click", openPopupImage);
+
+// cardElement.querySelector(".card__image").addEventListener("click", () => {
+//   const cardPopupImage = cardPopup.querySelector(".card-popup__image");
+//   const cardPopupCaption = cardPopup.querySelector(".card-popup__subtitle");
+//   cardPopupCaption.textContent = data.name;
+//   cardPopupImage.src = data.link;
+//   cardPopupImage.alt = "Photo of " + data.name;
+
+//   openPopup(cardPopup);
+// });
