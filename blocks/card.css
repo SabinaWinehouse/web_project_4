@@ -45,6 +45,7 @@
 }
 
 .card__like-button:hover {
+  cursor: pointer;
   opacity: 60%;
 }
 .card__delete-button {
@@ -59,4 +60,5 @@
 }
 .card__delete-button:hover {
   opacity: 60%;
+  cursor: pointer;
 }

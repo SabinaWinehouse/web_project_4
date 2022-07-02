@@ -41,6 +41,7 @@
 }
 .edit__button-close:hover {
   opacity: 60%;
+  cursor: pointer;
 }
 
 .edit__fieldset {
@@ -91,6 +92,7 @@
 }
 .edit__button:hover {
   opacity: 80%;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 474px) {

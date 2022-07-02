@@ -24,8 +24,8 @@ const initialCards = [
     link: "https://code.s3.yandex.net/web-code/lago.jpg",
   },
 ];
-
-const edit = document.querySelector(".edit");
+const cardTemplate = document.querySelector("#card-template").content;
+const editSectionEdit = document.querySelector(".edit");
 const nameField = document.querySelector(".profile__name");
 const jobField = document.querySelector(".profile__subtitle");
 const buttonEditAdd = document.querySelector(".profile__button-edit");
@@ -37,9 +37,10 @@ const galleryList = document.querySelector(".gallery__list");
 const addCardForm = document.querySelector(".add__form");
 const placeInputName = document.querySelector(".add__form-title");
 const placeInputLink = document.querySelector(".add__form-link");
-const add = document.querySelector(".add");
+const addSectionAdd = document.querySelector(".add");
 const buttonAddOpen = document.querySelector(".profile__button-add");
 const buttonAddClose = document.querySelector(".add__button-close");
+const submitButtonAddSection = document.querySelector(".add__button");
 
 initialCards.forEach((card) => {
   const cardElement = createCard(card);
@@ -58,7 +59,6 @@ function createCard(data) {
   const deleteButton = cardElement.querySelector(".card__delete-button");
   const popup = document.querySelector(".popup");
   const popupCaption = popup.querySelector(".popup__caption");
-
   cardImage.src = data.link;
   cardImage.alt = `A beautiful scene in ${data.name}`;
   cardTitleElement.textContent = data.name;
@@ -72,64 +72,35 @@ function createCard(data) {
     cardElement.remove();
   });
 
+  function callImagePopUp() {
+    const popupSectionPopup = document.querySelector(".popup");
+    const imagePopup = document.querySelector(".popup__image");
+    const cardImages = document.querySelectorAll(".card__picture");
+    const popupCloseButton = document.querySelector(".popup__button-close");
+
+    let URL;
+    let caption;
+
+    cardImages.forEach((image) => {
+      image.addEventListener("click", (e) => {
+        URL = e.target.src;
+        imagePopup.src = URL;
+
+        caption = e.target.alt;
+        imagePopup.alt = URL;
+
+        console.log(imagePopup.alt);
+        console.log(imagePopup.src);
+        popupSectionPopup.classList.toggle("popup_open");
+      });
+
+      popupCloseButton.addEventListener("click", () => {
+        popupSectionPopup.classList.remove("popup_open");
+      });
+    });
+  }
+  callImagePopUp();
   return cardElement;
-}
-
-function callImagePopUp() {
-  const popup = document.querySelector(".popup");
-  const imagePopup = document.querySelector(".popup__image");
-  const cardImages = document.querySelectorAll(".card__picture");
-  const popupCloseButton = document.querySelector(".popup__button-close");
-
-  let URL;
-  let caption;
-
-  cardImages.forEach((image) => {
-    image.addEventListener("click", (e) => {
-      URL = e.target.src;
-      imagePopup.src = URL;
-
-      caption = e.target.alt;
-      imagePopup.alt = URL;
-
-      console.log(imagePopup.alt);
-      console.log(imagePopup.src);
-      popup.classList.toggle("popup_open");
-    });
-
-    popupCloseButton.addEventListener("click", () => {
-      popup.classList.remove("popup_open");
-    });
-  });
-}
-
-function handleProfileFormSubmit(event) {
-  event.preventDefault();
-  nameField.textContent = nameInput.value;
-  jobField.textContent = jobInput.value;
-  CloseEditSection();
-}
-
-function closeAddSection() {
-  add.classList.remove("add_open");
-}
-
-function openAddSection() {
-  add.classList.add("add_open");
-}
-
-function OpenEditSection() {
-  edit.classList.add("edit_open");
-  nameInput.value = nameField.textContent;
-  jobInput.value = jobField.textContent;
-}
-
-function CloseEditSection() {
-  edit.classList.remove("edit_open");
-}
-
-function openPopup(popup) {
-  popup.classList.add("edit_open");
 }
 
 function handleAddCardForm() {
@@ -143,12 +114,22 @@ function handleAddCardForm() {
 
   const cardElement = createCard(card);
   renderCard(cardElement, galleryList);
+  closeAddSection();
 }
+
+function handleProfileFormSubmit(event) {
+  event.preventDefault();
+  nameField.textContent = nameInput.value;
+  jobField.textContent = jobInput.value;
+  closeEditSection();
+}
+
 ///////eventListeners////
 buttonEditAdd.addEventListener("click", () => {
-  openPopup(edit);
+  openPopup(editSectionEdit);
 });
-buttonEditClose.addEventListener("click", CloseEditSection);
+
+buttonEditClose.addEventListener("click", closeEditSection);
 formElement.addEventListener("submit", handleProfileFormSubmit);
 
 buttonAddClose.addEventListener("click", closeAddSection);
@@ -158,27 +139,25 @@ addCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
   handleAddCardForm();
 });
+////////////closing-opening-popups////////////
+function closeAddSection() {
+  addSectionAdd.classList.remove("add_open");
+}
 
-callImagePopUp();
+function openAddSection() {
+  addSectionAdd.classList.add("add_open");
+}
+function openEditSection() {
+  editSectionEdit.classList.add("edit_open");
+  nameInput.value = nameField.textContent;
+  jobInput.value = jobField.textContent;
+}
 
-// const popup = document.querySelector(".popup");
-// const imagePopup = document.querySelector(".popup__image");
-// const cardImages = document.querySelectorAll(".card__picture");
-// const popupButtonClose = document.querySelectorAll(".popup__button-close");
-// const popupCaption = document.querySelector(".popup__caption");
-
-// function openPopupImage() {
-//   popup.classList.add("popup_open");
-// }
-
-// cardImages.addEventListener("click", openPopupImage);
-
-// cardElement.querySelector(".card__image").addEventListener("click", () => {
-//   const cardPopupImage = cardPopup.querySelector(".card-popup__image");
-//   const cardPopupCaption = cardPopup.querySelector(".card-popup__subtitle");
-//   cardPopupCaption.textContent = data.name;
-//   cardPopupImage.src = data.link;
-//   cardPopupImage.alt = "Photo of " + data.name;
-
-//   openPopup(cardPopup);
-// });
+function closeEditSection() {
+  editSectionEdit.classList.remove("edit_open");
+}
+function openPopup(popup) {
+  nameInput.value = nameField.textContent;
+  jobInput.value = jobField.textContent;
+  popup.classList.add("edit_open");
+}

@@ -39,6 +39,7 @@
   right: -10%;
 }
 .add__button-close:hover {
+  cursor: pointer;
   opacity: 60%;
 }
 .add__fieldset {
@@ -89,6 +90,7 @@
 }
 .add__button:hover {
   opacity: 80%;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 474px) {
