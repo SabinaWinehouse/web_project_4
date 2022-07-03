@@ -47,8 +47,9 @@ const popupSection = document.querySelector(".popup");
 const buttonClosePopupImage = document.querySelector(
   ".popup__button-close-image"
 );
-//the button that closing add and edit sections
+//the button that closing popup and edit sections
 const buttonPopupClose = document.querySelector(".popup__button-close");
+
 //the inputs of a popup for edit section
 const nameInput = document.querySelector(".popup__form-name");
 const jobInput = document.querySelector(".popup__form-subtitle");
@@ -76,6 +77,11 @@ function openPopupSectionEdit() {
   popupEditSection.classList.add("popup_open");
   nameInput.value = nameField.textContent;
   jobInput.value = jobField.textContent;
+}
+
+//closing add section
+function closePopupAddSection() {
+  popupAddsection.classList.remove("popup_open");
 }
 
 //closing every popup on a page that has been opened before
@@ -169,7 +175,7 @@ function handlePopupCardForm() {
 
   const cardElement = createCard(card);
   renderCard(cardElement, galleryList);
-  closePopupSection();
+  closePopupAddSection();
 }
 
 function handleProfileFormSubmit(event) {
@@ -183,8 +189,9 @@ function handleProfileFormSubmit(event) {
 buttonEditAdd.addEventListener("click", () => {
   openPopupSectionEdit(popupSection);
 });
-buttonPopupClose.addEventListener("click", closePopupSection);
+
 editProfileForm.addEventListener("submit", handleProfileFormSubmit);
+
 buttonPopupClose.addEventListener("click", closePopupSection);
 buttonAddOpen.addEventListener("click", openPopupSection);
 createCardForm.addEventListener("submit", (event) => {
