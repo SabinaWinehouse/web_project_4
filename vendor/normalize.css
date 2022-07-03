@@ -46,7 +46,7 @@ h1 {
        ========================================================================== */
 
 /**
-     * 1. Add the correct box sizing in Firefox.
+     * 1. popup the correct box sizing in Firefox.
      * 2. Show the overflow in Edge and IE.
      */
 
@@ -79,7 +79,7 @@ a {
 
 /**
      * 1. Remove the bottom border in Chrome 57-
-     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+     * 2. popup the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
      */
 
 abbr[title] {
@@ -89,7 +89,7 @@ abbr[title] {
 }
 
 /**
-     * Add the correct font weight in Chrome, Edge, and Safari.
+     * popup the correct font weight in Chrome, Edge, and Safari.
      */
 
 b,
@@ -110,7 +110,7 @@ samp {
 }
 
 /**
-     * Add the correct font size in all browsers.
+     * popup the correct font size in all browsers.
      */
 
 small {
@@ -249,7 +249,7 @@ legend {
 }
 
 /**
-     * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+     * popup the correct vertical alignment in Chrome, Firefox, and Opera.
      */
 
 progress {
@@ -265,7 +265,7 @@ textarea {
 }
 
 /**
-     * 1. Add the correct box sizing in IE 10.
+     * 1. popup the correct box sizing in IE 10.
      * 2. Remove the padding in IE 10.
      */
 
@@ -316,7 +316,7 @@ textarea {
        ========================================================================== */
 
 /*
-     * Add the correct display in Edge, IE 10+, and Firefox.
+     * popup the correct display in Edge, IE 10+, and Firefox.
      */
 
 details {
@@ -324,7 +324,7 @@ details {
 }
 
 /*
-     * Add the correct display in all browsers.
+     * popup the correct display in all browsers.
      */
 
 summary {
@@ -335,7 +335,7 @@ summary {
        ========================================================================== */
 
 /**
-     * Add the correct display in IE 10+.
+     * popup the correct display in IE 10+.
      */
 
 template {
@@ -343,7 +343,7 @@ template {
 }
 
 /**
-     * Add the correct display in IE 10.
+     * popup the correct display in IE 10.
      */
 
 [hidden] {
