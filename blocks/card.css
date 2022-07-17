@@ -11,6 +11,7 @@
   width: 282px;
   height: 282px;
   display: block;
+  cursor: pointer;
 }
 .card__description {
   margin: 24px 15px 31px 21px;

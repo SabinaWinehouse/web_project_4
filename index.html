@@ -48,7 +48,11 @@
 
     <div class="popup" id="popup__section-edit">
       <div class="popup__container">
-        <button type="button" class="popup__button-close"></button>
+        <button
+          type="button"
+          class="popup__close"
+          id="editPopupSectionCloseButton"
+        ></button>
 
         <fieldset class="popup__fieldset">
           <h3 class="popup__profile">Edit profile</h3>
@@ -70,7 +74,7 @@
             />
 
             <button
-              class="popup__button-save"
+              class="popup__button-save popup__edit-profile"
               name="edit_profile_button"
               type="submit"
             >
@@ -85,8 +89,8 @@
       <div class="popup__container">
         <button
           type="button"
-          class="popup__button-close"
-          id="buttonPopupCloseAdd"
+          class="popup__close"
+          id="addPopupSectionCloseButton"
         ></button>
 
         <fieldset class="popup__fieldset">
@@ -109,7 +113,7 @@
             />
 
             <button
-              class="popup__button-save"
+              class="popup__button-save popup__create-card"
               name="create_a_card_button"
               type="submit"
             >
@@ -122,8 +126,11 @@
 
     <div class="popup" id="popup__image-section">
       <div class="popup__content">
-        <button type="button" class="popup__button-close-image"></button>
-        <figure>
+        <button
+          type="button"
+          class="popup__button-close-image popup__close"
+        ></button>
+        <figure class="popup__figure">
           <img class="popup__image" src="#" alt="#" />
           <figcaption class="popup__caption"></figcaption>
         </figure>
