@@ -44,7 +44,6 @@ const placeInputLink = document.querySelector(".popup__form-link");
 const buttonEditSectionProfile = document.querySelector(
   ".profile__button-edit"
 );
-
 const buttonAddSectionProfile = document.querySelector(".profile__button-add");
 const toCreateCardButton = document.querySelector(".popup__create-card");
 const toEditProfileButton = document.querySelector(".popup__edit-profile");
@@ -62,7 +61,6 @@ const editProfileForm = document.querySelector("#editProfileForm");
 const createCardForm = document.querySelector("#createCardForm");
 
 //functions
-
 function createCard(data) {
   const cardTemplate = document.querySelector("#card-template").content;
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
@@ -71,11 +69,11 @@ function createCard(data) {
   const popupImageCard = document.querySelector("#popup__image-section");
   const cardImage = cardElement.querySelector(".card__picture");
   const deleteButton = cardElement.querySelector(".card__delete-button");
-  const popupCaption = popupImageCard.querySelector(".popup__caption");
+
   cardImage.src = data.link;
   cardImage.alt = `A beautiful scene in ${data.name}`;
   cardTitleElement.textContent = data.name;
-  popupCaption.textContent = data.name;
+
   likeButton.addEventListener("click", () => {
     likeButton.classList.toggle("card__like-button_active");
   });
@@ -84,6 +82,8 @@ function createCard(data) {
   });
 
   const openCardPreview = () => {
+    const popupCaption = popupImageCard.querySelector(".popup__caption");
+    popupCaption.textContent = data.name;
     const image = document.querySelector(".popup__image");
     image.src = data.link;
     image.alt = `A beautiful scene in ${data.name}`;
@@ -145,6 +145,7 @@ toCreateCardButton.addEventListener("click", (event) => {
   event.preventDefault();
   handlePopupCardForm();
   closePopup(popupAddSection);
+  createCardForm.reset();
 });
 addPopupSectionCloseButton.addEventListener("click", () => {
   closePopup(popupAddSection);
@@ -160,4 +161,5 @@ buttonEditSectionProfile.addEventListener("click", () => {
 
 editPopupSectionCloseButton.addEventListener("click", () => {
   closePopup(popupEditSection);
+  editProfileForm.reset();
 });
