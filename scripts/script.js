@@ -45,8 +45,8 @@ const buttonEditSectionProfile = document.querySelector(
   ".profile__button-edit"
 );
 const buttonAddSectionProfile = document.querySelector(".profile__button-add");
-const toCreateCardButton = document.querySelector(".popup__create-card");
-const toEditProfileButton = document.querySelector(".popup__edit-profile");
+const createCardButton = document.querySelector(".popup__create-card");
+const editProfileButton = document.querySelector(".popup__edit-profile");
 const cardImagePopupSectionCloseButton = document.querySelector(
   ".popup__button-close-image"
 );
@@ -141,23 +141,26 @@ cardImagePopupSectionCloseButton.addEventListener("click", () => {
 buttonAddSectionProfile.addEventListener("click", () => {
   openPopup(popupAddSection);
 });
-toCreateCardButton.addEventListener("click", (event) => {
+
+createCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
   handlePopupCardForm();
-  closePopup(popupAddSection);
   createCardForm.reset();
 });
+
 addPopupSectionCloseButton.addEventListener("click", () => {
   closePopup(popupAddSection);
 });
 
 //opening and closing EDIT-section
-toEditProfileButton.addEventListener("click", handleProfileFormSubmit);
+//editProfileButton.addEventListener("click", handleProfileFormSubmit);
 buttonEditSectionProfile.addEventListener("click", () => {
   openPopup(popupEditSection);
   nameInput.value = nameField.textContent;
   jobInput.value = jobField.textContent;
 });
+
+editProfileForm.addEventListener("submit", handleProfileFormSubmit);
 
 editPopupSectionCloseButton.addEventListener("click", () => {
   closePopup(popupEditSection);
