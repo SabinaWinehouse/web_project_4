@@ -153,7 +153,7 @@ addPopupSectionCloseButton.addEventListener("click", () => {
 });
 
 //opening and closing EDIT-section
-//editProfileButton.addEventListener("click", handleProfileFormSubmit);
+
 buttonEditSectionProfile.addEventListener("click", () => {
   openPopup(popupEditSection);
   nameInput.value = nameField.textContent;
