@@ -58,7 +58,7 @@
           <h3 class="popup__profile">Edit profile</h3>
           <form name="popup_profile" class="popup__form" id="editProfileForm">
             <input
-              class="popup__form-name"
+              class="popup__input popup__form-name"
               name="popup_name"
               type="text"
               placeholder="Name"
@@ -66,7 +66,7 @@
             />
 
             <input
-              class="popup__form-subtitle"
+              class="popup__input popup__form-subtitle"
               name="popup_subtitle"
               type="text"
               placeholder="About me"
@@ -97,7 +97,7 @@
           <h3 class="popup__place">New place</h3>
           <form name="popup_place" class="popup__form" id="createCardForm">
             <input
-              class="popup__form-title"
+              class="popup__input popup__form-title"
               name="popup_title"
               type="text"
               placeholder="Title"
@@ -105,7 +105,7 @@
             />
 
             <input
-              class="popup__form-link"
+              class="popup__input popup__form-link"
               name="popup_link"
               type="text"
               placeholder="Image link"
@@ -138,6 +138,7 @@
     </div>
 
     <script src="./scripts/script.js" defer></script>
+    <script src="./scripts/validation.js" defer></script>
     <template id="card-template">
       <li class="card">
         <button type="button" class="card__delete-button"></button>
