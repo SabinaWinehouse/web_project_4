@@ -168,26 +168,10 @@ editPopupSectionCloseButton.addEventListener("click", () => {
   editProfileForm.reset();
 });
 
-// popupEachSection.forEach((item) => {
-//   item.addEventListener("click", (e) => {
-//     closePopup(e);
-//   });
-// });
-/////////////////
-// popupEachSection.addEventListener("click", () => {
-//   const popupContainer = document.querySelectorAll("#popup-container.active");
-//   popupContainer.forEach((modal) => {
-//     closePopup(modal);
-//   });
-// });
-
-// create function
-//search for overlay class
-//add event listener
-//clicking on esc or keydown closing popups
 document.addEventListener("keydown", function (event) {
+  const openedPopup = document.querySelector(".popup_open");
   const key = event.key;
   if (key === "Escape") {
-    closePopup(popupEachSection);
+    closePopup(openedPopup);
   }
 });
