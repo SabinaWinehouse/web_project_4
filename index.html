@@ -47,7 +47,7 @@
     </div>
 
     <div class="popup" id="popup__section-edit">
-      <div class="popup__container">
+      <div class="popup__container" id="popup-container">
         <button
           type="button"
           class="popup__close"
@@ -67,7 +67,7 @@
               minlength="2"
               maxlendth="40"
             />
-            <span id="name-input-error"></span>
+            <span id="name-input-error" class="popup__input-error"></span>
             <input
               class="popup__input popup__form-subtitle"
               id="job-input"
@@ -78,7 +78,7 @@
               minlength="2"
               maxlendth="200"
             />
-            <span id="job-input-error"></span>
+            <span id="job-input-error" class="popup__input-error"></span>
             <button
               class="popup__button popup__edit-profile"
               name="edit_profile_button"
@@ -92,7 +92,7 @@
     </div>
 
     <div class="popup" id="popup__section-add">
-      <div class="popup__container">
+      <div class="popup__container" id="popup-container">
         <button
           type="button"
           class="popup__close"
@@ -112,7 +112,7 @@
               minlength="1"
               maxlendth="30"
             />
-            <span id="card-name-input-error"></span>
+            <span id="card-name-input-error" class="popup__input-error"></span>
             <input
               class="popup__input popup__form-link"
               id="card-link-input"
@@ -121,7 +121,7 @@
               placeholder="Image link"
               required
             />
-            <span id="card-link-input-error"></span>
+            <span id="card-link-input-error" class="popup__input-error"></span>
             <button
               class="popup__button popup__create-card"
               name="create_a_card_button"
@@ -135,7 +135,7 @@
     </div>
 
     <div class="popup" id="popup__image-section">
-      <div class="popup__content">
+      <div class="popup__content" id="popup-container">
         <button
           type="button"
           class="popup__button-close-image popup__close"

@@ -27,7 +27,7 @@ const initialCards = [
 
 //sections
 const galleryList = document.querySelector(".gallery__list");
-const popupEachSection = document.querySelector(".popup");
+const popupEachSection = document.querySelectorAll(".popup");
 const popupImageCard = document.querySelector("#popup__image-section");
 const popupEditSection = document.querySelector("#popup__section-edit");
 const popupAddSection = document.querySelector("#popup__section-add");
@@ -108,7 +108,6 @@ function handlePopupCardForm() {
   renderCard(cardElement, galleryList);
   closePopup(popupAddSection);
 }
-//
 
 function handleProfileFormSubmit(event) {
   event.preventDefault();
@@ -123,7 +122,9 @@ function openPopup(popup) {
 function closePopup(popup) {
   popup.classList.remove("popup_open");
 }
-
+function togglePopup(popup) {
+  popup.classList.toggle("popup_open");
+}
 initialCards.forEach((card) => {
   const cardElement = createCard(card);
   renderCard(cardElement, galleryList);
@@ -165,4 +166,28 @@ editProfileForm.addEventListener("submit", handleProfileFormSubmit);
 editPopupSectionCloseButton.addEventListener("click", () => {
   closePopup(popupEditSection);
   editProfileForm.reset();
+});
+
+// popupEachSection.forEach((item) => {
+//   item.addEventListener("click", (e) => {
+//     closePopup(e);
+//   });
+// });
+/////////////////
+// popupEachSection.addEventListener("click", () => {
+//   const popupContainer = document.querySelectorAll("#popup-container.active");
+//   popupContainer.forEach((modal) => {
+//     closePopup(modal);
+//   });
+// });
+
+// create function
+//search for overlay class
+//add event listener
+//clicking on esc or keydown closing popups
+document.addEventListener("keydown", function (event) {
+  const key = event.key;
+  if (key === "Escape") {
+    closePopup(popupEachSection);
+  }
 });

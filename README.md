@@ -1,6 +1,6 @@
-# Project 5: Around The U.S.
+# Project 6: Around The U.S.
 
-## This is the fifth project of the Web Development program at Practicum by Yandex. It was created using HTML, JavaScript and CSS, based on the design brief.
+## This is the sixth project of the Web Development program at Practicum by Yandex. It was created using HTML, JavaScript and CSS, based on the design brief.
 
 ### Project features
 
@@ -10,6 +10,7 @@ Grid
 Positioning
 Flat BEM
 JavaScript
+JavaScript Validation
 
 **Figma**
 
