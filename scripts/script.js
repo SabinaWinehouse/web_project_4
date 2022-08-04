@@ -160,10 +160,10 @@ buttonAddSectionProfile.addEventListener("click", () => {
 });
 
 createCardForm.addEventListener("submit", (event) => {
-  event.toggleButtonState();
   event.preventDefault();
   handlePopupCardForm();
   createCardForm.reset();
+  toggleButtonState();
 });
 
 addPopupSectionCloseButton.addEventListener("click", () => {
