@@ -163,7 +163,7 @@ createCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
   handlePopupCardForm();
   createCardForm.reset();
-  toggleButtonState(event);
+  toggleButtonState(inputs, button, settings);
 });
 
 addPopupSectionCloseButton.addEventListener("click", () => {
@@ -177,23 +177,11 @@ buttonEditSectionProfile.addEventListener("click", () => {
   fillProfileForm();
 });
 
-editProfileForm.addEventListener("submit", () => {
-  editProfileForm.reset();
+editProfileForm.addEventListener("submit", (event) => {
+  event.preventDefault();
   handleProfileFormSubmit;
-  closePopup(popupEditSection);
 });
 
 editPopupSectionCloseButton.addEventListener("click", () => {
   closePopup(popupEditSection);
 });
-
-//add required to inputs in html
-const config = {
-  formSelector: ".popup__form",
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible",
-};
-enableValidation(config);

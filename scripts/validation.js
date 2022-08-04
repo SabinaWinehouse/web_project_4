@@ -1,3 +1,6 @@
+const checkFormValidity = (inputs) =>
+  inputs.every((input) => input.validity.valid);
+//const toggleButtonState = (inputs, button, settings);
 const config = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",
@@ -33,8 +36,7 @@ function toggleInputError(input, settings) {
 
 function toggleButtonState(inputs, button, settings) {
   const { inactiveButtonClass } = settings;
-  const checkFormValidity = (inputs) =>
-    inputs.every((input) => input.validity.valid);
+
   const isFormValid = checkFormValidity(inputs);
 
   if (isFormValid) {
