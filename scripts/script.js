@@ -73,14 +73,6 @@ function createCard(data) {
   cardImage.src = data.link;
   cardImage.alt = `A beautiful scene in ${data.name}`;
   cardTitleElement.textContent = data.name;
-
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-button_active");
-  });
-  deleteButton.addEventListener("click", () => {
-    cardElement.remove();
-  });
-
   const openCardPreview = () => {
     const popupCaption = popupImageCard.querySelector(".popup__caption");
     popupCaption.textContent = data.name;
@@ -90,6 +82,12 @@ function createCard(data) {
 
     openPopup(popupImageCard);
   };
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-button_active");
+  });
+  deleteButton.addEventListener("click", () => {
+    cardElement.remove();
+  });
 
   cardImage.addEventListener("click", openCardPreview);
   return cardElement;
@@ -117,14 +115,16 @@ function handleProfileFormSubmit(event) {
 }
 function openPopup(popup) {
   popup.classList.add("popup_open");
+  document.addEventListener("keydown", closePopupByEscape);
+  popup.addEventListener("mousedown", closePopupOnRemoteClick);
 }
 
 function closePopup(popup) {
   popup.classList.remove("popup_open");
+  document.removeEventListener("keydown", closePopupByEscape);
+  popup.removeEventListener("mousedown", closePopupOnRemoteClick);
 }
-function togglePopup(popup) {
-  popup.classList.toggle("popup_open");
-}
+
 initialCards.forEach((card) => {
   const cardElement = createCard(card);
   renderCard(cardElement, galleryList);
@@ -132,6 +132,22 @@ initialCards.forEach((card) => {
 
 function renderCard(card, container) {
   container.prepend(card);
+}
+function fillProfileForm() {
+  nameInput.value = nameField.textContent;
+  jobInput.value = jobField.textContent;
+}
+function closePopupByEscape(event) {
+  const key = event.key;
+  if (key === "Escape") {
+    const openedPopup = document.querySelector(".popup_open");
+    closePopup(openedPopup);
+  }
+}
+function closePopupOnRemoteClick(event) {
+  if (event.target === event.currentTarget) {
+    closePopup(event.target);
+  }
 }
 
 //event-listeners
@@ -144,6 +160,7 @@ buttonAddSectionProfile.addEventListener("click", () => {
 });
 
 createCardForm.addEventListener("submit", (event) => {
+  event.toggleButtonState();
   event.preventDefault();
   handlePopupCardForm();
   createCardForm.reset();
@@ -157,21 +174,17 @@ addPopupSectionCloseButton.addEventListener("click", () => {
 
 buttonEditSectionProfile.addEventListener("click", () => {
   openPopup(popupEditSection);
-  nameInput.value = nameField.textContent;
-  jobInput.value = jobField.textContent;
+  fillProfileForm();
 });
 
-editProfileForm.addEventListener("submit", handleProfileFormSubmit);
+editProfileForm.addEventListener("submit", () => {
+  editProfileForm.reset();
+  handleProfileFormSubmit;
+  closePopup(popupEditSection);
+});
 
 editPopupSectionCloseButton.addEventListener("click", () => {
   closePopup(popupEditSection);
-  editProfileForm.reset();
 });
 
-document.addEventListener("keydown", function (event) {
-  const openedPopup = document.querySelector(".popup_open");
-  const key = event.key;
-  if (key === "Escape") {
-    closePopup(openedPopup);
-  }
-});
+//add required to inputs in html
