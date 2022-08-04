@@ -163,7 +163,7 @@ createCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
   handlePopupCardForm();
   createCardForm.reset();
-  toggleButtonState();
+  toggleButtonState(event);
 });
 
 addPopupSectionCloseButton.addEventListener("click", () => {
@@ -188,3 +188,12 @@ editPopupSectionCloseButton.addEventListener("click", () => {
 });
 
 //add required to inputs in html
+const config = {
+  formSelector: ".popup__form",
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
+};
+enableValidation(config);
