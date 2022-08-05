@@ -107,12 +107,6 @@ function handlePopupCardForm() {
   closePopup(popupAddSection);
 }
 
-function handleProfileFormSubmit(event) {
-  event.preventDefault();
-  nameField.textContent = nameInput.value;
-  jobField.textContent = jobInput.value;
-  closePopup(popupEditSection);
-}
 function openPopup(popup) {
   popup.classList.add("popup_open");
   document.addEventListener("keydown", closePopupByEscape);
@@ -123,6 +117,12 @@ function closePopup(popup) {
   popup.classList.remove("popup_open");
   document.removeEventListener("keydown", closePopupByEscape);
   popup.removeEventListener("mousedown", closePopupOnRemoteClick);
+}
+function handleProfileFormSubmit(event) {
+  closePopup(popupEditSection);
+  event.preventDefault();
+  nameField.textContent = nameInput.value;
+  jobField.textContent = jobInput.value;
 }
 
 initialCards.forEach((card) => {
@@ -179,7 +179,7 @@ buttonEditSectionProfile.addEventListener("click", () => {
 
 editProfileForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  handleProfileFormSubmit;
+  handleProfileFormSubmit();
 });
 
 editPopupSectionCloseButton.addEventListener("click", () => {
