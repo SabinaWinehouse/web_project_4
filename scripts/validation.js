@@ -39,7 +39,7 @@ function toggleButtonState(inputs, button, settings) {
   const isFormValid = checkFormValidity(inputs);
 
   if (isFormValid) {
-    button.disaled = false;
+    button.disabled = false;
     button.classList.remove(inactiveButtonClass);
   } else {
     button.disabled = true;
