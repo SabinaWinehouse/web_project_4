@@ -167,8 +167,7 @@ createCardForm.addEventListener("submit", (event) => {
 addPopupSectionCloseButton.addEventListener("click", () => {
   closePopup(popupAddSection);
 });
-
-//opening and closing EDIT-section
+//opening and closing EDIT-sections
 
 buttonEditSectionProfile.addEventListener("click", () => {
   openPopup(popupEditSection);
