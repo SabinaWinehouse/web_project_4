@@ -21,7 +21,6 @@ class FormValidator {
     });
   }
 }
-
 const settings = {
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__button",
