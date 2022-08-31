@@ -46,6 +46,20 @@ function toggleButtonState(inputs, button, settings) {
     button.classList.add(inactiveButtonClass);
   }
 }
+const setEventListeners = ( formSelector,{ inputSelector, submitButtonSelector, ...rest } =
+settings){
+  const inputs = [...form.querySelectorAll(inputSelector)];
+  const button = form.querySelector(submitButtonSelector);
+  
+  inputs.forEach((input) => {
+    input.addEventListener("input", () => {
+      toggleInputError(input, rest);
+      toggleButtonState(inputs, button, rest);
+    });
+  });
+}09;
+
+
 
 function enableValidation(settings) {
   const { formSelector, inputSelector, submitButtonSelector, ...rest } =
