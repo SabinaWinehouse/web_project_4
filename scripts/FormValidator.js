@@ -1,8 +1,8 @@
 class FormValidator {
-  constructor() {}
+  constructor(config) {}
 }
-const editFormValidator = new FormValidator();
-const addFormValidator = new FormValidator();
+const editFormValidator = new FormValidator(validationConfig, editProfileForm);
+const addFormValidator = new FormValidator(validationConfig, createCardForm);
 
 // class FormValidator {
 //   constructor(settings, formElement) {
