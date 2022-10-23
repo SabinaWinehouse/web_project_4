@@ -1,4 +1,3 @@
-// function that shows the error when you type something wrong from what we requer
 function showError(input, settings) {
   const { inputErrorClass } = settings;
   const error = input.validationMessage;

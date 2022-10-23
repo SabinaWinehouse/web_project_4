@@ -1,3 +1,22 @@
+import FormValidator from "./FormValidator.js";
+
+const settings = {
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
+};
+
+//forms
+const editProfileForm = document.querySelector("#editProfileForm");
+const createCardForm = document.querySelector("#createCardForm");
+const editFormValidator = new FormValidator(settings, editProfileForm);
+const addFormValidator = new FormValidator(settings, createCardForm);
+editFormValidator.enableValidation();
+addFormValidator.enableValidation();
+addFormValidator.resetValidation();
+editFormValidator.resetValidation();
 const initialCards = [
   {
     name: "Yosemite Valley",
@@ -56,9 +75,6 @@ const editPopupSectionCloseButton = document.querySelector(
 const addPopupSectionCloseButton = document.querySelector(
   "#addPopupSectionCloseButton"
 );
-//forms
-const editProfileForm = document.querySelector("#editProfileForm");
-const createCardForm = document.querySelector("#createCardForm");
 
 //functions
 function createCard(data) {
@@ -155,6 +171,7 @@ cardImagePopupSectionCloseButton.addEventListener("click", () => {
 });
 //opening and closing ADD-section
 buttonAddSectionProfile.addEventListener("click", () => {
+  addFormValidator.resetValidation();
   openPopup(popupAddSection);
 });
 
@@ -170,6 +187,7 @@ addPopupSectionCloseButton.addEventListener("click", () => {
 //opening and closing EDIT-sections
 
 buttonEditSectionProfile.addEventListener("click", () => {
+  editFormValidator.resetValidation();
   openPopup(popupEditSection);
   fillProfileForm();
 });
