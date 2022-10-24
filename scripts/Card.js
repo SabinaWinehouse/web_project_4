@@ -1,5 +1,5 @@
-import { openPopup } from "./utils.js";
-class Card {
+import { openPopup, popupCaption, imageElement  } from "./utils.js";
+export class Card {
   constructor({ name, link }, templateCardSelector) {
     this._name = name;
     this._link = link;
@@ -9,7 +9,7 @@ class Card {
       .querySelector(templateCardSelector)
       .content.querySelector(".card");
   }
-  getCardElement = () => {
+  createCard = () => {
     this._cardElement = this._cardTemplate.cloneNode(true);
     const cardImage = this._cardElement.querySelector(".card__picture");
     const likeButton = this._cardElement.querySelector(".card__like-button");
@@ -28,13 +28,12 @@ class Card {
     _handleDeleteCard = () => this._cardElement.remove();
 
     const openCardPreview = () => {
-      const popupCaption = popupImageCard.querySelector(".popup__caption");
+   
 
       popupCaption.textContent = this._name;
 
-      const image = document.querySelector(".popup__image");
-      image.src = this._link;
-      image.alt = `A beautiful scene in ${this._name}`;
+      imageElement.src = this._link;
+      imageElement.alt = `A beautiful scene in ${this._name}`;
 
       openPopup(popupImageCard);
     };

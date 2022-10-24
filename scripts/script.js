@@ -1,5 +1,6 @@
 import FormValidator from "./FormValidator.js";
-
+import { openPopup } from "./utils";
+import { Card } from "./Card.js";
 const settings = {
   inputSelector: ".popup__input",
   submitButtonSelector: ".popup__button",
@@ -123,12 +124,6 @@ function handlePopupCardForm() {
   closePopup(popupAddSection);
 }
 
-function openPopup(popup) {
-  popup.classList.add("popup_open");
-  document.addEventListener("keydown", closePopupByEscape);
-  popup.addEventListener("mousedown", closePopupOnRemoteClick);
-}
-
 function closePopup(popup) {
   popup.classList.remove("popup_open");
   document.removeEventListener("keydown", closePopupByEscape);
@@ -139,9 +134,10 @@ function handleProfileFormSubmit() {
   jobField.textContent = jobInput.value;
   closePopup(popupEditSection);
 }
-
+const cardTemplateSelector = document.querySelector("#card-template").content;
+//render-card
 initialCards.forEach((card) => {
-  const cardElement = createCard(card);
+  const cardElement = new Card(card, cardTemplateSelector );
   renderCard(cardElement, galleryList);
 });
 

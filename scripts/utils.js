@@ -1,9 +1,12 @@
+export const popupCaption = popupImageCard.querySelector(".popup__caption");
+
+export  const imageElement = document.querySelector(".popup__image");
 export function openPopup(popup) {
   popup.classList.add("popup_open");
   document.addEventListener("keydown", closePopupByEscape);
   popup.addEventListener("mousedown", closePopupOnRemoteClick);
 }
-export function closePopup(popup) {
+function closePopup(popup) {
   popup.classList.remove("popup_open");
   document.removeEventListener("keydown", closePopupByEscape);
   popup.removeEventListener("mousedown", closePopupOnRemoteClick);
