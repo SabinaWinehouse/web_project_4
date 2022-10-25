@@ -1,6 +1,6 @@
+const popupImageCard = document.querySelector("#popup__image-section");
 export const popupCaption = popupImageCard.querySelector(".popup__caption");
-
-export  const imageElement = document.querySelector(".popup__image");
+export const imageElement = document.querySelector(".popup__image");
 export function openPopup(popup) {
   popup.classList.add("popup_open");
   document.addEventListener("keydown", closePopupByEscape);

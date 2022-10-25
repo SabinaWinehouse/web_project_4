@@ -1,5 +1,5 @@
 import FormValidator from "./FormValidator.js";
-import { openPopup } from "./utils";
+import { openPopup } from "./utils.js";
 import { Card } from "./Card.js";
 const settings = {
   inputSelector: ".popup__input",
@@ -47,7 +47,7 @@ const initialCards = [
 
 //sections
 const galleryList = document.querySelector(".gallery__list");
-const popupEachSection = document.querySelectorAll(".popup");
+
 const popupImageCard = document.querySelector("#popup__image-section");
 const popupEditSection = document.querySelector("#popup__section-edit");
 const popupAddSection = document.querySelector("#popup__section-add");
@@ -137,12 +137,12 @@ function handleProfileFormSubmit() {
 const cardTemplateSelector = document.querySelector("#card-template").content;
 //render-card
 initialCards.forEach((card) => {
-  const cardElement = new Card(card, cardTemplateSelector );
+  const cardElement = new Card(card, cardTemplateSelector);
   renderCard(cardElement, galleryList);
 });
 
 function renderCard(card, container) {
-  container.prepend(card);
+  container.prepend(card.createCard);
 }
 function fillProfileForm() {
   nameInput.value = nameField.textContent;

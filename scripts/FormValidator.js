@@ -36,7 +36,6 @@ class FormValidator {
     const { inputSelector } = this._settings;
 
     this.inputs = [...this._formElement.querySelectorAll(inputSelector)];
-    console.log(this.inputs);
 
     this.inputs.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
