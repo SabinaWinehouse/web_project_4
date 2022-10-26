@@ -10,10 +10,11 @@ export class Card {
 
   _addEventListeners() {
     const likeButton = this._cardElement.querySelector(".card__like-button");
+    
     const deleteButton = this._cardElement.querySelector(".card__delete-button");
     likeButton.addEventListener("click", this._handleLikeButton);
     deleteButton.addEventListener("click", this._handleDeleteCard);
-    cardImage.addEventListener("click", openCardPreview);
+    this._cardImage.addEventListener("click", this._openCardPreview);
   }
 
   _openCardPreview = () => {
@@ -23,18 +24,20 @@ export class Card {
     imageElement.alt = `A beautiful scene in ${this._name}`;
     openPopup(popupImageCard);
   };
+
+  _handleLikeButton = (e) => e.target.classList.toggle("card__like-button_active");
+  _handleDeleteCard = () => this._cardElement.remove();
+
   createCard = () => {
     this._cardElement = this._cardTemplate.cloneNode(true);
-    const cardImage = this._cardElement.querySelector(".card__picture");
+    this._cardImage = this._cardElement.querySelector(".card__picture");
 
     const cardTitleElement = this._cardTemplate.querySelector(".card__title");
 
-    cardImage.src = this._link;
-    cardImage.alt = `A beautiful scene in ${this._name}`;
+    this._cardImage.src = this._link;
+    this._cardImage.alt = `A beautiful scene in ${this._name}`;
     cardTitleElement.textContent = this._name;
 
-    _handleLikeButton = (e) => e.target.classList.toggle("card__like-button_active");
-    _handleDeleteCard = () => this._cardElement.remove();
 
     this._addEventListeners();
     this._openCardPreview();

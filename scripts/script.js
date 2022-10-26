@@ -134,15 +134,17 @@ function handleProfileFormSubmit() {
   jobField.textContent = jobInput.value;
   closePopup(popupEditSection);
 }
-const cardTemplateSelector = document.querySelector("#card-template").content;
+const cardTemplateSelector = "#card-template";
 //render-card
 initialCards.forEach((card) => {
+  
   const cardElement = new Card(card, cardTemplateSelector);
+  
   renderCard(cardElement, galleryList);
 });
 
 function renderCard(card, container) {
-  container.prepend(card.createCard);
+  container.prepend(card.createCard());
 }
 function fillProfileForm() {
   nameInput.value = nameField.textContent;
