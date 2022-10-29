@@ -169,7 +169,6 @@ cardImagePopupSectionCloseButton.addEventListener("click", () => {
 });
 //opening and closing ADD-section
 buttonAddSectionProfile.addEventListener("click", () => {
-  addFormValidator.resetValidation();
   openPopup(popupAddSection);
 });
 
@@ -177,6 +176,7 @@ createCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
   handlePopupCardForm();
   createCardForm.reset();
+  addFormValidator._toggleButtonState()
 });
 
 addPopupSectionCloseButton.addEventListener("click", () => {

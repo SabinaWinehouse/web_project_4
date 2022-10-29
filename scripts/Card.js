@@ -1,4 +1,6 @@
 import { openPopup, popupCaption, imageElement } from "./utils.js";
+
+
 export class Card {
   constructor({ name, link }, templateCardSelector) {
     this._name = name;
@@ -32,7 +34,7 @@ export class Card {
     this._cardElement = this._cardTemplate.cloneNode(true);
     this._cardImage = this._cardElement.querySelector(".card__picture");
 
-    const cardTitleElement = this._cardTemplate.querySelector(".card__title");
+    const cardTitleElement = this._cardElement.querySelector(".card__title");
 
     this._cardImage.src = this._link;
     this._cardImage.alt = `A beautiful scene in ${this._name}`;
@@ -40,7 +42,7 @@ export class Card {
 
 
     this._addEventListeners();
-    this._openCardPreview();
+    
 
     return this._cardElement;
   };
