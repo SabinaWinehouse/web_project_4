@@ -40,13 +40,13 @@ class FormValidator {
   };
 
   _setEventListeners = () => {
-
+    this._toggleButtonState();
     this._inputs.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
         this._checkFormValidity(inputElement);
         this._toggleInputError(inputElement);
 
-    this._toggleButtonState();
+        this._toggleButtonState(inputElement);
         
       });
     });
@@ -61,7 +61,7 @@ class FormValidator {
   }
 
   _toggleButtonState() {
-    const {  inactiveButtonClass} = this._settings;
+    const { inactiveButtonClass, submitButtonSelector } = this._settings; 
     
     const isFormValid = this._checkFormValidity();
     

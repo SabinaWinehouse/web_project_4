@@ -1,5 +1,7 @@
-import { openPopup, popupCaption, imageElement } from "./utils.js";
-
+import { openPopup} from "./utils.js";
+const popupImageCard = document.querySelector("#popup__image-section");
+const popupCaption = popupImageCard.querySelector(".popup__caption");
+const imageElement = document.querySelector(".popup__image");
 
 export class Card {
   constructor({ name, link }, templateCardSelector) {
