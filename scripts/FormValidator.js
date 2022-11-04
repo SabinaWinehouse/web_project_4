@@ -30,13 +30,15 @@ class FormValidator {
   _checkFormValidity = (input) => {
     if (!input) {
       return;
-     
     }
     if (!input.validity.valid) {
       this._showError(input, input.validationMessage);
+    
     } else {
       this._hideError(input);
+    
     }
+    
   };
 
   _setEventListeners = () => {
@@ -45,7 +47,6 @@ class FormValidator {
       inputElement.addEventListener("input", () => {
         this._checkFormValidity(inputElement);
         this._toggleInputError(inputElement);
-
         this._toggleButtonState(inputElement);
         
       });
@@ -62,17 +63,19 @@ class FormValidator {
 
   _toggleButtonState() {
     const { inactiveButtonClass, submitButtonSelector } = this._settings; 
-    
     const isFormValid = this._checkFormValidity();
     
     if (isFormValid) {
       this._buttonElement.disabled = false;
       this._buttonElement.classList.remove(inactiveButtonClass);
+     // this._buttonElement.classList.add(submitButtonSelector);
+    
      
     } else {
+      
       this._buttonElement.disabled = true;
       this._buttonElement.classList.add(inactiveButtonClass);
-     
+      
     }
   }
 
