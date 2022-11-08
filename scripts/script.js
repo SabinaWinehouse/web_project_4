@@ -1,5 +1,6 @@
 import FormValidator from "./FormValidator.js";
 import { openPopup } from "./utils.js";
+import { closePopup } from "./utils.js";
 import { Card } from "./Card.js";
 import {initialCards} from "./contstans.js";
 const settings = {
@@ -68,11 +69,6 @@ function handlePopupCardForm() {
   closePopup(popupAddSection);
 }
 
-function closePopup(popup) {
-  popup.classList.remove("popup_open");
-  document.removeEventListener("keydown", closePopupByEscape);
-  popup.removeEventListener("mousedown", closePopupOnRemoteClick);
-}
 function handleProfileFormSubmit() {
   nameField.textContent = nameInput.value;
   jobField.textContent = jobInput.value;
@@ -81,9 +77,8 @@ function handleProfileFormSubmit() {
 const cardTemplateSelector = "#card-template";
 //render-card
 initialCards.forEach((card) => {
-  
   const cardElement = new Card(card, cardTemplateSelector);
-  
+
   renderCard(cardElement, galleryList);
 });
 
@@ -94,18 +89,7 @@ function fillProfileForm() {
   nameInput.value = nameField.textContent;
   jobInput.value = jobField.textContent;
 }
-function closePopupByEscape(event) {
-  const key = event.key;
-  if (key === "Escape") {
-    const openedPopup = document.querySelector(".popup_open");
-    closePopup(openedPopup);
-  }
-}
-function closePopupOnRemoteClick(event) {
-  if (event.target === event.currentTarget) {
-    closePopup(event.target);
-  }
-}
+
 
 //event-listeners
 cardImagePopupSectionCloseButton.addEventListener("click", () => {
@@ -120,7 +104,7 @@ createCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
   handlePopupCardForm();
   createCardForm.reset();
-  addFormValidator._toggleButtonState()
+  addFormValidator.toggleButtonState()
 });
 
 addPopupSectionCloseButton.addEventListener("click", () => {
