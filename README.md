@@ -10,6 +10,7 @@ Positioning
 Flat BEM
 JavaScript
 JavaScript Validation
+JavaScript classes
 
 **Figma**
 
