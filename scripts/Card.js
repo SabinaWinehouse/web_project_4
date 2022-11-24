@@ -1,4 +1,4 @@
-import { openPopup} from "./utils.js";
+import { openPopup } from "./utils.js";
 const popupImageCard = document.querySelector("#popup__image-section");
 const popupCaption = popupImageCard.querySelector(".popup__caption");
 const imageElement = document.querySelector(".popup__image");
@@ -7,14 +7,13 @@ export class Card {
   constructor({ name, link }, templateCardSelector) {
     this._name = name;
     this._link = link;
-
     this._templateCardElement = templateCardSelector;
-    this._cardTemplate = document.querySelector(templateCardSelector).content.querySelector(".card");
-  }
+    this._cardTemplate = document.querySelector(this._templateCardElement).content.querySelector(".card");
+  };
+
 
   _addEventListeners() {
     const likeButton = this._cardElement.querySelector(".card__like-button");
-    
     const deleteButton = this._cardElement.querySelector(".card__delete-button");
     likeButton.addEventListener("click", this._handleLikeButton);
     deleteButton.addEventListener("click", this._handleDeleteCard);
@@ -45,7 +44,6 @@ export class Card {
 
     this._addEventListeners();
     
-
     return this._cardElement;
   };
 }

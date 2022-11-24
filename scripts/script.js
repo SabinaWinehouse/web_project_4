@@ -50,9 +50,10 @@ const addPopupSectionCloseButton = document.querySelector(
   "#addPopupSectionCloseButton"
 );
 
+const cardTemplateSelector = "#card-template";
 //functions
 function createCard(data) { 
-  const card = new Card(data);
+  const card = new Card({...data}, cardTemplateSelector);
   return card.createCard();
  }
 function handlePopupCardForm() {
@@ -74,16 +75,18 @@ function handleProfileFormSubmit() {
   jobField.textContent = jobInput.value;
   closePopup(popupEditSection);
 }
-const cardTemplateSelector = "#card-template";
 //render-card
 initialCards.forEach((card) => {
-  const cardElement = new Card(card, cardTemplateSelector);
+  const cardElement = new Card({...card}, cardTemplateSelector);
 
   renderCard(cardElement, galleryList);
+  
 });
 
 function renderCard(card, container) {
-  container.prepend(card.createCard());
+  const cardEl = card.createCard()
+  console.log(cardEl)
+  container.prepend(cardEl);
 }
 function fillProfileForm() {
   nameInput.value = nameField.textContent;
