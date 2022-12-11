@@ -3,13 +3,7 @@ import { openPopup } from "./utils.js";
 import { closePopup } from "./utils.js";
 import { Card } from "./Card.js";
 import {initialCards} from "./contstans.js";
-const settings = {
-  inputSelector: ".popup__input",
-  submitButtonSelector: ".popup__button",
-  inactiveButtonClass: "popup__button_disabled",
-  inputErrorClass: "popup__input_type_error",
-  errorClass: "popup__error_visible",
-};
+import {settings} from "./contstans.js";
 
 //forms
 const editProfileForm = document.querySelector("#editProfileForm");
@@ -18,8 +12,7 @@ const editFormValidator = new FormValidator(settings, editProfileForm);
 const addFormValidator = new FormValidator(settings, createCardForm);
 editFormValidator.enableValidation();
 addFormValidator.enableValidation();
-addFormValidator.resetValidation();
-editFormValidator.resetValidation();
+
 
 //sections
 const galleryList = document.querySelector(".gallery__list");
@@ -49,24 +42,21 @@ const editPopupSectionCloseButton = document.querySelector(
 const addPopupSectionCloseButton = document.querySelector(
   "#addPopupSectionCloseButton"
 );
-
 const cardTemplateSelector = "#card-template";
+
 //functions
 function createCard(data) { 
-  const card = new Card({...data}, cardTemplateSelector);
+  const card = new Card(data, cardTemplateSelector);
   return card.createCard();
  }
 function handlePopupCardForm() {
   const link = placeInputLink.value;
   const name = placeInputName.value;
-
   const card = {
     name: name,
     link: link,
   };
-
-  const cardElement = createCard(card);
-  renderCard(cardElement, galleryList);
+  renderCard(card, galleryList);
   closePopup(popupAddSection);
 }
 
@@ -75,16 +65,15 @@ function handleProfileFormSubmit() {
   jobField.textContent = jobInput.value;
   closePopup(popupEditSection);
 }
-//render-card
-initialCards.forEach((card) => {
-  const cardElement = new Card({...card}, cardTemplateSelector);
-  renderCard(cardElement, galleryList);
-  
-});
 
-function renderCard(card, container) {
-  const cardEl = new Card ( );
-  container.prepend(card);
+
+//render-card
+initialCards.forEach((cardData) => {
+  renderCard(cardData, galleryList);
+})
+function renderCard(cardData, container) { 
+  const cardElement = createCard(cardData);
+  container.prepend(cardElement); 
 }
 function fillProfileForm() {
   nameInput.value = nameField.textContent;
@@ -96,35 +85,36 @@ function fillProfileForm() {
 cardImagePopupSectionCloseButton.addEventListener("click", () => {
   closePopup(popupImageCard);
 });
+
+
 //opening and closing ADD-section
 buttonAddSectionProfile.addEventListener("click", () => {
   openPopup(popupAddSection);
 });
-
 createCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
   handlePopupCardForm();
   createCardForm.reset();
-  addFormValidator.toggleButtonState()
+  addFormValidator._toggleButtonState();
 });
+
 
 addPopupSectionCloseButton.addEventListener("click", () => {
   closePopup(popupAddSection);
 });
-//opening and closing EDIT-sections
 
+
+//opening and closing EDIT-sections
 buttonEditSectionProfile.addEventListener("click", () => {
   editFormValidator.resetValidation();
   openPopup(popupEditSection);
   fillProfileForm();
 });
-
 editProfileForm.addEventListener("submit", (event) => {
   event.preventDefault();
   handleProfileFormSubmit();
   editProfileForm.reset();
 });
-
 editPopupSectionCloseButton.addEventListener("click", () => {
   closePopup(popupEditSection);
 });
