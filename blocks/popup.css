@@ -11,16 +11,17 @@
   opacity: 0;
   pointer-events: none;
   transition: visibility 0s 0.3s, opacity 0.3s linear;
-  visibility: none;
+  visibility: hidden;
+  display: flex;
   
 }
 
 .popup_open {
-  display: flex;
-  visibility: visible;
-pointer-events: all;
-  opacity: 1;
-  transition: visibility 0s, opacity 0.3s linear;
+  
+    visibility: visible;
+    pointer-events: all;
+    opacity: 1;
+    transition: visibility 0s, opacity 0.3s linear;
 }
 
 .popup__container {

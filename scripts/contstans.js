@@ -24,4 +24,11 @@ export  const initialCards = [
       link: "https://code.s3.yandex.net/web-code/lago.jpg",
     },
   ];
- 
+  
+ export const settings = {
+  inputSelector: ".popup__input",
+  submitButtonSelector: ".popup__button",
+  inactiveButtonClass: "popup__button_disabled",
+  inputErrorClass: "popup__input_type_error",
+  errorClass: "popup__error_visible",
+};

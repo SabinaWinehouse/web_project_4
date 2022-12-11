@@ -3,6 +3,7 @@ export function openPopup(popup) {
   document.addEventListener("keydown", closePopupByEscape);
   popup.addEventListener("mousedown", closePopupOnRemoteClick);
 }
+
 export function closePopup(popup) {
   popup.classList.remove("popup_open");
   document.removeEventListener("keydown", closePopupByEscape);
@@ -16,6 +17,7 @@ function closePopupByEscape(event) {
     closePopup(openedPopup);
   }
 }
+
 function closePopupOnRemoteClick(event) {
   if (event.target === event.currentTarget) {
     closePopup(event.target);

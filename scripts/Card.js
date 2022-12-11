@@ -11,7 +11,6 @@ export class Card {
     this._cardTemplate = document.querySelector(this._templateCardElement).content.querySelector(".card");
   };
 
-
   _addEventListeners() {
     const likeButton = this._cardElement.querySelector(".card__like-button");
     const deleteButton = this._cardElement.querySelector(".card__delete-button");
@@ -34,16 +33,11 @@ export class Card {
   createCard = () => {
     this._cardElement = this._cardTemplate.cloneNode(true);
     this._cardImage = this._cardElement.querySelector(".card__picture");
-
     const cardTitleElement = this._cardElement.querySelector(".card__title");
-
     this._cardImage.src = this._link;
     this._cardImage.alt = `A beautiful scene in ${this._name}`;
     cardTitleElement.textContent = this._name;
-
-
     this._addEventListeners();
-    
     return this._cardElement;
   };
 }

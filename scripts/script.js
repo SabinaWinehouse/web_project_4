@@ -78,15 +78,13 @@ function handleProfileFormSubmit() {
 //render-card
 initialCards.forEach((card) => {
   const cardElement = new Card({...card}, cardTemplateSelector);
-
   renderCard(cardElement, galleryList);
   
 });
 
 function renderCard(card, container) {
-  const cardEl = card.createCard()
-  console.log(cardEl)
-  container.prepend(cardEl);
+  const cardEl = new Card ( );
+  container.prepend(card);
 }
 function fillProfileForm() {
   nameInput.value = nameField.textContent;
