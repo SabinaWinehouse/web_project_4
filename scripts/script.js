@@ -5,6 +5,7 @@ import { Card } from "./Card.js";
 import {initialCards} from "./contstans.js";
 import {settings} from "./contstans.js";
 
+
 //forms
 const editProfileForm = document.querySelector("#editProfileForm");
 const createCardForm = document.querySelector("#createCardForm");
@@ -20,6 +21,7 @@ const popupImageCard = document.querySelector("#popup__image-section");
 const popupEditSection = document.querySelector("#popup__section-edit");
 const popupAddSection = document.querySelector("#popup__section-add");
 
+
 //inputs
 const nameField = document.querySelector(".profile__name");
 const jobField = document.querySelector(".profile__subtitle");
@@ -27,6 +29,7 @@ const nameInput = document.querySelector(".popup__form-name");
 const jobInput = document.querySelector(".popup__form-subtitle");
 const placeInputName = document.querySelector(".popup__form-title");
 const placeInputLink = document.querySelector(".popup__form-link");
+
 
 //buttons
 const buttonEditSectionProfile = document.querySelector(
@@ -43,6 +46,7 @@ const addPopupSectionCloseButton = document.querySelector(
   "#addPopupSectionCloseButton"
 );
 const cardTemplateSelector = "#card-template";
+
 
 //functions
 function createCard(data) { 
@@ -95,7 +99,7 @@ createCardForm.addEventListener("submit", (event) => {
   event.preventDefault();
   handlePopupCardForm();
   createCardForm.reset();
-  addFormValidator._toggleButtonState();
+  addFormValidator.toggleButtonState();
 });
 
 
