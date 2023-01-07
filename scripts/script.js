@@ -4,6 +4,9 @@ import { closePopup } from "./utils.js";
 import { Card } from "./Card.js";
 import {initialCards} from "./contstans.js";
 import {settings} from "./contstans.js";
+import Section from "./Section.js";
+import PopupWithImage from "./PopupWithImage";
+import PopupWithForm from "./PopupWithForm";
 
 
 //forms
