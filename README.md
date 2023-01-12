@@ -1,4 +1,4 @@
-# Project 7: Around The U.S.
+# Project 8: Around The U.S.
 
 ## This is the seventh project of the Web Development program at Practicum by Yandex. It was created using HTML, JavaScript and CSS, based on the design brief.
 

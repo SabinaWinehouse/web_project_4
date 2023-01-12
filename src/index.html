@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Around the U.S." />
+    <meta name="keywords" content="html, css" />
+    <meta name="author" content="Sabina Winehouse" />
+    <title>Around the U.S.</title>
+    <link rel="icon" href="./vendor/favicon.ico" />
+  </head>
+
+  <body class="page">
+    <header class="header">
+      <img src="<%=require('../images/Logo.svg')%>" class="header__logo" alt="logo" />
+    </header>
+    <div class="page__content">
+      <main>
+        <section class="profile">
+          <img
+            src="<%=require('../images/profile_pic.jpg')%>"
+            alt="profile"
+            class="profile__picture"
+          />
+          <div class="profile__name-edit">
+            <h1 class="profile__name">Jacques Cousteau</h1>
+            <button type="button" class="profile__button-edit"></button>
+          </div>
+          <p class="profile__subtitle">Explorer</p>
+
+          <button
+            type="button"
+            class="profile__button-add"
+            id="addButton"
+          ></button>
+        </section>
+
+        <div class="gallery">
+          <ul class="gallery__list"></ul>
+        </div>
+      </main>
+      <footer class="footer">
+        <p class="footer__text">© 2021 Around The U.S.</p>
+      </footer>
+    </div>
+
+    <div class="popup" id="popup__section-edit">
+      <div class="popup__container">
+        <button
+          type="button"
+          class="popup__close"
+          id="editPopupSectionCloseButton"
+        ></button>
+
+        <fieldset class="popup__fieldset">
+          <h3 class="popup__profile">Edit profile</h3>
+          <form name="popup_profile" class="popup__form" id="editProfileForm">
+            <input
+              class="popup__input popup__form-name"
+              id="name-input"
+              name="popup_name"
+              type="text"
+              placeholder="Name"
+              minlength="2"
+              maxlength="40"
+              required
+            />
+            <span id="name-input-error" class="popup__input-error"></span>
+            <input
+              class="popup__input popup__form-subtitle"
+              id="job-input"
+              name="popup_subtitle"
+              type="text"
+              placeholder="About me"
+              minlength="2"
+              maxlength="200"
+              required
+            />
+            <span id="job-input-error" class="popup__input-error"></span>
+            <button
+              class="popup__button popup__edit-profile"
+              name="edit_profile_button"
+              type="submit"
+            >
+              Save
+            </button>
+          </form>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="popup" id="popup__section-add">
+      <div class="popup__container">
+        <button
+          type="button"
+          class="popup__close"
+          id="addPopupSectionCloseButton"
+        ></button>
+
+        <fieldset class="popup__fieldset">
+          <h3 class="popup__place">New place</h3>
+          <form name="popup_place" class="popup__form" id="createCardForm">
+            <input
+              class="popup__input popup__form-title"
+              id="card-name-input"
+              name="popup_title"
+              type="text"
+              placeholder="Title"
+              minlength="1"
+              maxlength="30"
+              required
+            />
+              
+            <span id="card-name-input-error" class="popup__input-error"></span>
+            <input
+              class="popup__input popup__form-link"
+              id="card-link-input"
+              name="popup_link"
+              type="url"
+              placeholder="Image link"
+              required
+            />
+                  
+            <span id="card-link-input-error" class="popup__input-error"></span>
+            <button
+              class="popup__button popup__create-card"
+              name="create_a_card_button"
+              type="submit"
+            >
+              Create
+            </button>
+          </form>
+        </fieldset>
+      </div>
+    </div>
+
+    <div class="popup" id="popup__image-section">
+      <div class="popup__content">
+        <button
+          type="button"
+          class="popup__button-close-image popup__close"
+        ></button>
+        <figure class="popup__figure">
+          <img class="popup__image" src="#" alt="#" />
+          <figcaption class="popup__caption"></figcaption>
+        </figure>
+      </div>
+    </div>
+    <template id="card-template">
+      <li class="card">
+        <button type="button" class="card__delete-button"></button>
+        <img src="#" alt="#" class="card__picture" />
+        <div class="card__description">
+          <h2 class="card__title"></h2>
+          <button type="button" class="card__like-button"></button>
+        </div>
+      </li>
+    </template>
+  </body>
+</html>
+
