@@ -23,7 +23,6 @@ export default class Popup{
         this._popup.addEventListener("mousedown", (event) =>{
          
          if(event.target.classList.contains("popup") || event.target.classList.contains("popup__close") ){
-          console.log("dfs");
             this.close()
          }
         
