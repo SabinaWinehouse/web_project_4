@@ -38,7 +38,6 @@ const editFormValidator = new FormValidator(settings, editProfileForm);
 const addFormValidator = new FormValidator(settings, createCardForm);
 editFormValidator.enableValidation();
 addFormValidator.enableValidation();
-
 section.renderItems();
 
 //buttons
@@ -46,8 +45,6 @@ const buttonEditSectionProfile = document.querySelector(
   ".profile__button-edit"
 );
 const buttonAddSectionProfile = document.querySelector(".profile__button-add");
-//const cardTemplateSelector = ;
-
 
 //functions
 function createCard(data) { 
