@@ -1,15 +1,12 @@
-import { openPopup } from "./utils.js";
-const popupImageCard = document.querySelector("#popup__image-section");
-const popupCaption = popupImageCard.querySelector(".popup__caption");
-const imageElement = document.querySelector(".popup__image");
 
 export class Card {
   constructor({ name, link }, templateCardSelector, handleCardClick) {
+
     this._name = name;
     this._link = link;
-    this._templateCardElement = templateCardSelector;
-    this._cardTemplate = document.querySelector(this._templateCardElement).content.querySelector(".card");
+    this._cardTemplate = document.querySelector(templateCardSelector).content.querySelector(".card");
     this._handleCardClick = handleCardClick;
+  
   };
 
   _addEventListeners() {
