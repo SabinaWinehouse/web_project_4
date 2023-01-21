@@ -21,7 +21,6 @@ export default class UserInfo {
   
     prefillForm() {
       const {name, job} = this.getUserInfo();
-  
       this._nameInput.value = name;
       this._jobInput.value = job;
     }

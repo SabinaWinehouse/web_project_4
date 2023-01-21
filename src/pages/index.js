@@ -1,12 +1,12 @@
-import './pages/index.css'
-import FormValidator from "./scripts/FormValidator.js";
-import { Card } from "./scripts/Card.js";
-import {initialCards} from "./scripts/contstans.js";
-import {settings} from "./scripts/contstans.js";
-import Section from "./scripts/Section.js";
-import PopupWithImage from "./scripts/PopupWithImage";
-import PopupWithForm from "./scripts/PopupWithForm";
-import UserInfo from "./scripts/UserInfo.js";
+import './index.css'
+import FormValidator from "../components/FormValidator.js";
+import { Card } from "../components/Card.js";
+import {initialCards} from "../utils/contstans.js";
+import {settings} from "../utils/contstans.js";
+import Section from "../components/Section.js";
+import PopupWithImage from "../components/PopupWithImage";
+import PopupWithForm from "../components/PopupWithForm";
+import UserInfo from "../components/UserInfo.js";
 
 
 //forms
@@ -54,7 +54,9 @@ function createCard(data) {
 
 //opening and closing ADD-section
 buttonAddSectionProfile.addEventListener("click", () => {
+  addFormValidator.resetValidation();
   addCardPopup.open();
+  addFormValidator.toggleButtonState();
 });
 
 
